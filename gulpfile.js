@@ -6,9 +6,9 @@ var minifycss = require('gulp-minify-css');
 var livereload = require('gulp-livereload');
 
 var paths = {
-	scripts: 'public/scripts/**/*.js',
+	scripts: 'public/scripts/lib/**/*.js',
 	scriptsDest: 'public/scripts',
-	styles: 'public/stylesheets/**/*.css',
+	styles: 'public/stylesheets/lib/**/*.css',
 	stylesDest: 'public/styles'
 };
 

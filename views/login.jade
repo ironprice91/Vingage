@@ -4,4 +4,12 @@ block content
 	form(action="/auth/login" method="post")
 		input(type="text" name="username" placeholder="Username")
 		input(type="password" name="password" placeholder="Password")
-		input(type="submit")
+		button(type="submit") Sign in
+
+	//- Sign up
+	form(action="/auth" method="post")
+		input(type="text" name="username" placeholder="Username")
+		input(type="email" name="email" placeholder="Email")
+		input(type="password" name="password" placeholder="Password")
+		input(type="password" name="password" placeholder="Confirm Password")
+		button(type="submit") Sign in

@@ -28,15 +28,6 @@ passport.deserializeUser(function(id, next){
 	});
 });
 
-// ensure authentication method (stay logged in)
-module.exports = {
-	ensureAuthenticated: function(req,res,next){
-		if(req.isAuthenticated()){
-			return next();
-		}
-		res.redirect('/auth/login');
-	}
-};
 
 // STRATEGIES
 var localStrategy = new LocalStrategy(
@@ -62,3 +53,14 @@ var localStrategy = new LocalStrategy(
 );
 
 passport.use(localStrategy);
+
+
+// ensure authentication method (stay logged in)
+module.exports = {
+	ensureAuthenticated: function(req,res,next){
+		if(req.isAuthenticated()){
+			return next();
+		}
+		res.redirect('/auth/login');
+	}
+};

@@ -40,7 +40,8 @@ var indexController = {
     }, function (err, data) {
       res.render('index', {
         s3: data,
-        bucket: BUCKET
+        bucket: BUCKET,
+        user: req.user
       });
     });
   },
