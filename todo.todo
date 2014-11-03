@@ -1,13 +1,27 @@
+Key:
+- not priority
++ priority
+
 Backlog: 
- ☐ Hook up AWS
- ☐ Make local login
  ☐ Api logins
  ☐ Hook up Heroku server
+ ☐ Interactive chat with sockets -
+ ☐ Bookmark video/save in database +
+ ☐ Delete video functionality +
+ ☐ Delete user profile 
+ ☐ Make a seed video +
+ ☐ Test your gulp minification +
 
  ToDo:
- ☐ Hook up Database
+ ☐ Show and save videos
+ ☐ Make a new user through forms
 
-
+ Reminders:
+ ☐ Make devmain js/css for public folder
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Set up Gulp + @done (14-11-03 10:34) @project(Backlog)
+ ✔ Make local login @done (14-11-03 10:12) @project(Backlog)
+ ✔ Hook up Database @done (14-11-03 09:41) @project(Backlog)
+ ✔ Hook up AWS @done (14-11-03 09:41) @project(Backlog)
  ✔ Make a to do list @done (14-11-03 09:15) @project(Backlogs)
