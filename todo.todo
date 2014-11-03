@@ -2,23 +2,26 @@ Key:
 < priority
 - not priority
  Reminders:
- ☐ Make devmain. js/css for public folder
+ ☐ Make devmain. js/css for public folder 
+ ☐ In your AWS S3 you removed the private folder
 Backlog: 
  ☐ Api logins -
- ☐ Hook up Heroku server <
  ☐ Interactive chat with sockets -
  ☐ Bookmark video/save in database <
  ☐ Delete video functionality <
  ☐ Delete user profile 
  ☐ Make a seed video <
  ☐ Test your gulp minification <
- ☐ Add ability to stream -
+ ☐ Add ability to stream - 
+ ☐ Push to heroku
+ ☐ set up heroku db
 
  ToDo:
  ☐ Show and save videos to database
  ☐ Make a new user through forms
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Hook up Heroku server < @done (14-11-03 14:09) @project(Backlog)
  ✔ Add bootstrap @done (14-11-03 14:02) @project(Backlog)
  ✔ Set up Gulp + @done (14-11-03 10:34) @project(Backlog)
  ✔ Make local login @done (14-11-03 10:12) @project(Backlog)

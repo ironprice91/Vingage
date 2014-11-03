@@ -86,29 +86,6 @@ var indexController = {
         console.log('Result: ', result);
       });
 
-  },
-
-  submitPrivate: function(req, res){
-    console.log(req.files);
-    var fName = req.files.image.name;
-    var fPath = req.files.image.path;
-    var cType = req.files.image.type;
-    var size = req.files.image.size;
-
-    fs.readFile(fPath, function (err, data) {
-      console.log(err);
-      s3.putObject({
-        Bucket: BUCKET,
-        Key: 'private/' + fName,
-        ContentType: cType,
-        Body: data
-      }, function (err, result) {
-        console.log(err, result);
-        // good idea to remove the temporary upload
-        fs.unlink(fPath);
-        res.redirect('/');
-      });
-    });
   }
 };
 

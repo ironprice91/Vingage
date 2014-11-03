@@ -37,8 +37,8 @@ app.use(passsportConfig.ensureAuthenticated);
 app.get('/', indexController.index);
 app.get('/view', indexController.view);
 app.post('/submitPublic', multer(), indexController.submitPublic);
-app.post('/submitPrivate', multer(), indexController.submitPrivate);
 
-var server = app.listen(6503, function() {
+var port = process.env.PORT || 6503;
+var server = app.listen(port, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
