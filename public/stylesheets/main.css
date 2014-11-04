@@ -1,1 +1,1 @@
-.main-nav{background:#fff;color:#000;border:0;border-radius:0;border-bottom:2px solid #888}.sign-in{box-shadow:0 5px 15px #888}.upload-video{height:45rem}.custom-drop{height:43rem}
+.main-nav{background:#fff;color:#000;border:0;border-radius:0;border-bottom:2px solid #888}.sign-in{box-shadow:0 5px 15px #888}.upload-video{height:45rem}.custom-drop{height:43rem;border:4px dashed gray}.custom-drop:hover{height:43rem;border:4px dashed #000}

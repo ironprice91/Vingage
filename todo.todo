@@ -4,6 +4,7 @@ Key:
  Reminders:
  ☐ Make devmain. js/css for public folder 
  ☐ In your AWS S3 you removed the private folder
+ ☐ When production link to main  js/css
 Backlog: 
  ☐ Api logins -
  ☐ Interactive chat with sockets -
@@ -14,17 +15,17 @@ Backlog:
  ☐ Add ability to stream - 
  ☐ Push to heroku
  ☐ set up heroku db
- ☐ Implement backbone <
  ☐ Search videos
- ☐ template video display using handlebars <
 
  ToDo:
+ ☐ template video display using handlebars <
+ ☐ Implement backbone (see chatroom for template structure) <
  ☐ Bookmark video/save in database <
  ☐ show video via database not AWS server <
  ☐ Dynamically add bookmark <
- ☐ Make a new user through forms
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Make a new user through forms (see passport-local student sample code) @done (14-11-04 11:09) @project(Backlog)
  ✔ Show and save videos to database @done (14-11-03 14:27) @project(Backlog)
  ✔ Hook up Heroku server < @done (14-11-03 14:09) @project(Backlog)
  ✔ Add bootstrap @done (14-11-03 14:02) @project(Backlog)

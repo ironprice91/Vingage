@@ -2,8 +2,9 @@ doctype html
 html(lang='en')
 	head
 		meta(charset="utf-8")
-		title VidUp
+		title Vingage
 		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css")
+		link(rel="stylesheet", href="http://vjs.zencdn.net/4.9/video-js.css")
 		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css")
 		link(rel="stylesheet", href="/stylesheets/lib/mainDev.css")
 
@@ -12,7 +13,17 @@ html(lang='en')
 	section.container
 		block content
 	
-	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+	//- external scripts
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js") 
+	script(src="http://vjs.zencdn.net/4.9/video.js") 
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js") 
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js") 
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js") 
 	script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js")
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/3.8.4/dropzone.min.js")
+	
+	//- backbone scripts
+	script(src="/scripts/lib/collections/video-list.js")
+	script(src="/scripts/lib/models/video-model.js")
+	script(src="/scripts/lib/views/video-view.js")
 	script(src="/scripts/lib/mainDev.js")

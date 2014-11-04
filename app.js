@@ -2,16 +2,18 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var mongoose = require('mongoose');
-var authentication = require('./controllers/authentication.js');
 var passsportConfig = require('./config/passport.js');
 
 // encrypt lib for password
-var passport = require('passport');
 var session = require('express-session');
+var cookieParser = require('cookie-parser');
+var flash = require('connect-flash');
+var passport = require('passport');
 
 // This allows express to parse incoming files from forms
 var multer = require('multer');
 
+var authenticationController = require('./controllers/authentication.js');
 var indexController = require('./controllers/index.js');
 
 // Connect to our database called: videoApp
@@ -24,12 +26,20 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
+app.use(cookieParser());
+app.use(flash());
+
 // passport stuff
 app.use(session({secret: 'secret key'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/auth', authentication);
+app.get('/auth/login', authenticationController.login);
+app.post('/auth/login', authenticationController.processLogin);
+app.post('/auth/signup', authenticationController.processSignup);
+app.get('/auth/logout', authenticationController.logout);
+
+
 // ensure auth
 app.use(passsportConfig.ensureAuthenticated);
 
