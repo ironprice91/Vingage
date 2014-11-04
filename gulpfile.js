@@ -9,7 +9,8 @@ var paths = {
 	scripts: 'public/scripts/lib/**/*.js',
 	scriptsDest: 'public/scripts',
 	styles: 'public/stylesheets/lib/**/*.css',
-	stylesDest: 'public/styles'
+	stylesDest: 'public/stylesheets',
+	jade: '**/*.jade'
 };
 
 // 'scripts' is runnable
@@ -28,12 +29,18 @@ gulp.task('styles', function(){
 	.pipe(livereload({ auto: false }))
 });
 
+gulp.task('jade', function(){
+	gulp.src(paths.jade)
+	.pipe(livereload({ auto: false }))
+});
+
 // define gulp task then run 'gulp watch' once to watch files
 gulp.task('watch', function(){
 	// startes live reload server (line below)
 	livereload.listen();
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.styles, ['styles']);
+	gulp.watch(paths.jade, ['jade']);
 });
 
 gulp.task('default', ['scripts', 'styles']);

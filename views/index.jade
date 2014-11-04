@@ -1,14 +1,13 @@
 extends layout
 
-block content
-	h1= title
-	p Welcome, #{user.username}
-	p: a(href="/auth/logout") Logout
+block navbar
+	nav.navbar.navbar-inverse.main-nav
+		section.container
+			p= user.username
+			p.pull-right.logout: a(href="/auth/logout") Logout
+			button(data-toggle="modal" data-target="#uploadModal"): i.fa.fa-video-camera
 
-	h3 Add a Public File
-	form(method="post", action="/submitPublic", enctype="multipart/form-data")
-		input(type="file", name="image")
-		input(type="submit")
+block content
 
 	if s3
 		h1 Files
@@ -16,6 +15,16 @@ block content
 			for file in s3.Contents
 				li
 					ul
-						li= file.Key
-						li: a(href='https://s3.amazonaws.com/#{bucket}/#{file.Key}') Public Link
-						li: video(width='320' height='240' controls): source(src='https://s3.amazonaws.com/#{bucket}/#{file.Key}')
+						li: a(href='https://s3.amazonaws.com/#{bucket}/#{file.Key}') Download Video
+						li: video(id="my-video" width='320' height='240' controls): source(src='https://s3.amazonaws.com/#{bucket}/#{file.Key}')
+						button(onclick = "setCurTime()" type="button" class="btn btn-default") Bookmarked time
+						button(class="btn btn-primary" type="button" onclick="getCurTime()" action="/addBookmark"): i(class="fa fa-plus")
+
+	//- Upload template
+	.modal.fade(id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+		.modal-dialog
+			.modal-content
+				.modal-body.upload-video
+					button.close(type="button" data-dismiss="modal"): span &times;
+					form.dropzone.dz-clickable.custom-drop(method="post", action="/submitPublic", enctype="multipart/form-data" name="image")
+						

@@ -1,0 +1,1 @@
+console.log("yo");var video=document.getElementById("my-video"),setCurTime=function(){video.currentTime=5},getCurTime=function(){console.log(video.currentTime)};

@@ -56,12 +56,12 @@ var indexController = {
   },
 
   submitPublic: function(req, res){
-    console.log(req.files);
-    var fName = req.files.image.name;
-    var fPath = req.files.image.path;
-    var cType = req.files.image.type;
-    var size = req.files.image.size;
-
+    console.log('test', req.files);
+    
+    var fName = req.files.file.name;
+    var fPath = req.files.file.path;
+    var cType = req.files.file.type;
+    var size = req.files.file.size;
     fs.readFile(fPath, function (err, data) {
       console.log(err);
       s3.putObject({

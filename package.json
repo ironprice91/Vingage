@@ -10,7 +10,8 @@
     "express-session": "~1.9.1",
     "bcrypt": "~0.8.0",
     "passport-facebook": "~1.0.3",
-    "passport-local": "~1.0.0"
+    "passport-local": "~1.0.0",
+    "dropzone": "~3.8.4"
   },
   "devDependencies": {
     "gulp": "~3.8.9",
@@ -20,6 +21,6 @@
     "gulp-livereload": "~2.1.1"
   },
   "scripts": {
-  	"start" : "node app.js"
+    "start": "node app.js"
   }
 }
