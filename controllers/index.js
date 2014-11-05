@@ -66,7 +66,7 @@ var indexController = {
       console.log(err);
       s3.putObject({
         Bucket: BUCKET,
-        Key: 'public/' + fName,
+        Key: fName,
         ContentType: cType,
         ACL: 'public-read',
         Body: data
@@ -81,7 +81,7 @@ var indexController = {
     // Database for holding the AWS url to file 
     // Might have to do /public in your hard string url
       console.log('name: ', fName);
-      var newVideo = new Video({videoUrl: 'https://s3.amazonaws.com/refactoru/' + fName});
+      var newVideo = new Video({videoUrl: 'https://s3.amazonaws.com/refactoru/public/' + fName});
       newVideo.save(function(err, result){
         console.log('Result: ', result);
       });

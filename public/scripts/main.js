@@ -1,1 +1,1 @@
-$(function(){var e=document.getElementById("3419ea3a0430fea21179df3d39ec4a9a.mp4_html5_api");$(document).on("click",".toggle-add-note",function(){$("#3419ea3a0430fea21179df3d39ec4a9a.mp4_html5_api").video.pause(),e.get(0).pause()})});
+$(function(){var e=document.getElementById("3419ea3a0430fea21179df3d39ec4a9a.mp4_html5_api");$(document).on("click",".toggle-add-note",function(a){console.log(a),$("#public/3419ea3a0430fea21179df3d39ec4a9a.mp4_html5_api").video.pause(),e.get(0).pause()})});
