@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 
 // AWS video Schema
 var videoSchema = mongoose.Schema({
-	videoUrl: String,
 	title: String,
-	bookmark: [{
+	videoSrc: String,
+	notes: [{
 		time: Number,
-		note: [String]
+		note: String
 	}]
 });
 

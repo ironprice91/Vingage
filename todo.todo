@@ -11,7 +11,6 @@ Backlog:
  ☐ Delete video functionality <
  ☐ Delete user profile 
  ☐ Make a seed video <
- ☐ Test your gulp minification <
  ☐ Add ability to stream - 
  ☐ Push to heroku
  ☐ set up heroku db
@@ -19,13 +18,15 @@ Backlog:
  ☐ List videos on seperate page -
 
  ToDo:
+ ☐ show video via database not AWS server <<<
+ ☐ Pause video wtih external button <<
  ☐ template video display using handlebars <
  ☐ Implement backbone (see chatroom for template structure) <
  ☐ Bookmark video/save in database <
- ☐ show video via database not AWS server <
  ☐ Dynamically add bookmark <
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Test your gulp minification < @done (14-11-05 12:46) @project(Backlog)
  ✔ Make a new user through forms (see passport-local student sample code) @done (14-11-04 11:09) @project(Backlog)
  ✔ Show and save videos to database @done (14-11-03 14:27) @project(Backlog)
  ✔ Hook up Heroku server < @done (14-11-03 14:09) @project(Backlog)

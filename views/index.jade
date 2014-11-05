@@ -9,7 +9,7 @@ block navbar
 
 block content
 	//- Handlebars template
-	include templates.html
+	include partials/video-tpl.jade
 
 	if s3
 		h1 Files
@@ -24,7 +24,7 @@ block content
 								source(src='https://s3.amazonaws.com/#{bucket}/#{file.Key}' type="video/webm")
 								p.vjs-no-js To view this video please enable Javascript || consider upgrading to a web browser that supports HTML5 video
 							button(onclick = "setCurTime()" type="button" class="btn btn-default") Bookmarked time
-							button(class="toggle-add-note btn btn-primary" type="button" action="/addBookmark"): i.fa.fa-plus.toggle-add-note(data-key='#{file.Key}')
+							button(class="toggle-add-note btn btn-primary" type="button" onclick="newNote()"): i.fa.fa-plus.toggle-add-note(data-key='#{file.Key}')
 
 	//- Upload template
 	.modal.fade(id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
@@ -32,3 +32,6 @@ block content
 			.modal-content
 				.modal-body.upload-video
 					form.dropzone.dz-clickable.custom-drop(method="post", action="/submitPublic", enctype="multipart/form-data" name="image")
+						input(type="text" name="video-title" placeholder="Title")
+						input(type="file", name="video")
+						input(type="submit")

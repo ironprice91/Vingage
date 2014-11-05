@@ -56,17 +56,17 @@ var indexController = {
   },
 
   submitPublic: function(req, res){
-    console.log('test', req.files);
+    console.log('Your file info', req.files);
     
-    var fName = req.files.file.name;
-    var fPath = req.files.file.path;
-    var cType = req.files.file.type;
-    var size = req.files.file.size;
+    var fName = req.files.video.name;
+    var fPath = req.files.video.path;
+    var cType = req.files.video.type;
+    var size = req.files.video.size;
     fs.readFile(fPath, function (err, data) {
       console.log(err);
       s3.putObject({
         Bucket: BUCKET,
-        Key: fName,
+        Key: 'public/' + fName,
         ContentType: cType,
         ACL: 'public-read',
         Body: data
@@ -81,7 +81,7 @@ var indexController = {
     // Database for holding the AWS url to file 
     // Might have to do /public in your hard string url
       console.log('name: ', fName);
-      var newVideo = new Video({videoUrl: 'https://s3.amazonaws.com/refactoru/public/' + fName});
+      var newVideo = new Video({videoSrc: 'https://s3.amazonaws.com/refactoru/public/' + fName});
       newVideo.save(function(err, result){
         console.log('Result: ', result);
       });

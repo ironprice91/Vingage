@@ -9,6 +9,10 @@ $(function(){
 		console.log(video.currentTime);
 	};*/
 
+	function newNote() {
+		console.log('test');
+	};
+
 	var pauseVideo = function(){
 		video.pause();
 	};

@@ -15,6 +15,7 @@ var multer = require('multer');
 
 var authenticationController = require('./controllers/authentication.js');
 var indexController = require('./controllers/index.js');
+var videoController = require('./controllers/videoController.js');
 
 // Connect to our database called: videoApp
 mongoose.connect('mongodb://localhost/vidup');
@@ -47,6 +48,8 @@ app.use(passsportConfig.ensureAuthenticated);
 app.get('/', indexController.index);
 app.get('/view', indexController.view);
 app.post('/submitPublic', multer(), indexController.submitPublic);
+
+app.post('/video', videoController.addVideo);
 
 var port = process.env.PORT || 6503;
 var server = app.listen(port, function() {

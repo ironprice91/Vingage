@@ -1,0 +1,14 @@
+//- template view for a single video
+script#video-tpl(type="text/x-handlebars-template").
+	<ul>
+		<li>
+			<a href="{{video}}">Download Video</a>
+		</li>
+		<li>
+			<video class="video-js vjs-default-skin uploaded-video" id="{{idAttributes}}" controls data-setup='{}'>
+				<source src"{{video}}" type="video/mp4">
+				<source src"{{video}}" type="video/webm">
+				<p class="vjs-no-js"> To view this video please enable Javascript || consider upgrading to a web browser that supports HTML5 video</p>
+			</video>
+			<button class="toggle-new-note btn btn-primary" data-key="{{idAttributes}}">Add Note</button>
+	</ul>

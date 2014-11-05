@@ -17,11 +17,11 @@ height: 45rem;
 }
 
 .custom-drop {
-height: 43rem;
+height: 36rem;
 border: 4px dashed gray;
 }
 .custom-drop:hover {
-height: 43rem;
+height: 36rem;
 border: 4px dashed black;
 }
 
