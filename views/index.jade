@@ -23,7 +23,7 @@ block content
 								source(src='https://s3.amazonaws.com/#{bucket}/#{file.Key}' type="video/webm")
 								p.vjs-no-js To view this video please enable Javascript || consider upgrading to a web browser that supports HTML5 video
 						button(onclick = "setCurTime()" type="button" class="btn btn-default") Bookmarked time
-						button(class="btn btn-primary" type="button" onclick="getCurTime()" action="/addBookmark"): i(class="fa fa-plus")
+						button(class="toggle-add-note btn btn-primary" type="button" action="/addBookmark"): i(class="fa fa-plus")
 
 	//- Upload template
 	.modal.fade(id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
