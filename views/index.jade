@@ -8,9 +8,6 @@ block navbar
 			button(data-toggle="modal" data-target="#uploadModal"): i.fa.fa-video-camera
 
 block content
-	//- Handlebars template
-	include partials/video-tpl.jade
-
 	if s3
 		h1 Files
 		ul
@@ -25,7 +22,6 @@ block content
 								p.vjs-no-js To view this video please enable Javascript || consider upgrading to a web browser that supports HTML5 video
 							button(onclick = "setCurTime()" type="button" class="btn btn-default") Bookmarked time
 							button(class="toggle-add-note btn btn-primary" type="button" onclick="newNote()"): i.fa.fa-plus.toggle-add-note(data-key='#{file.Key}')
-
 	//- Upload template
 	.modal.fade(id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
 		.modal-dialog

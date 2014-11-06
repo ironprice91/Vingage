@@ -3,8 +3,8 @@ Key:
 - not priority
  Reminders:
  ☐ Make devmain. js/css for public folder 
- ☐ In your AWS S3 you removed the private folder
  ☐ When production link to main  js/css
+ ✔ In your AWS S3 you removed the private folder @done (14-11-05 17:02)
 Backlog: 
  ☐ Api logins -
  ☐ Interactive chat with sockets -
@@ -18,14 +18,15 @@ Backlog:
  ☐ List videos on seperate page -
 
  ToDo:
- ☐ show video via database not AWS server <<<
  ☐ Pause video wtih external button <<
  ☐ template video display using handlebars <
- ☐ Implement backbone (see chatroom for template structure) <
  ☐ Bookmark video/save in database <
  ☐ Dynamically add bookmark <
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✘ Put modal form in backbone @cancelled (14-11-05 17:01) @project(Backlog)
+ ✔ Implement backbone (see chatroom for template structure) < @done (14-11-05 17:01) @project(Backlog)
+ ✔ show video via database not AWS server <<< @done (14-11-05 16:38) @project(Backlog)
  ✔ Test your gulp minification < @done (14-11-05 12:46) @project(Backlog)
  ✔ Make a new user through forms (see passport-local student sample code) @done (14-11-04 11:09) @project(Backlog)
  ✔ Show and save videos to database @done (14-11-03 14:27) @project(Backlog)

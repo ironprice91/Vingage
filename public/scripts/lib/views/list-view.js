@@ -12,7 +12,7 @@ var VideoListView = Backbone.View.extend({
 
 	render: function(){
 		var videoViews = this.collection.map(function(video){
-			var videoView = new VideoView({model : bird});
+			var videoView = new VideoView({model : video});
 			videoView.render();
 			return videoView.el;
 		});

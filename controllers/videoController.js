@@ -5,7 +5,7 @@ var videoController = {
 		var videoData = req.body;
 		var video = new Video(videoData);
 
-		video.save(function(err, bird){
+		video.save(function(err, video){
 			res.send(video);
 		});
 	}

@@ -27,6 +27,7 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(flash());
 
@@ -49,7 +50,7 @@ app.get('/', indexController.index);
 app.get('/view', indexController.view);
 app.post('/submitPublic', multer(), indexController.submitPublic);
 
-app.post('/video', videoController.addVideo);
+app.post('/addVideo', videoController.addVideo);
 
 var port = process.env.PORT || 6503;
 var server = app.listen(port, function() {
