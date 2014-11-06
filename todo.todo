@@ -8,20 +8,24 @@ Backlog:
  ☐ Api logins -
  ☐ Interactive chat with sockets -
  ☐ Delete user profile 
- ☐ Make a seed video <
  ☐ Add ability to stream - 
  ☐ Push to heroku
  ☐ set up heroku db
  ☐ Search videos
  ☐ List videos on seperate page -
+ ☐ Implement Sass (gulp sass/use libsass)
  ☐ Different video display sizes by buttons
+ ☐ Include VTI file for  subtitiles and searchable video --
 
  ToDo:
- ☐ Find unique ID for each video when pressing new note button
+ ☐ Render note to your video container <<<
  ☐ Bookmark video/save in database <
- ☐ Delete video functionality <
+ ☐ Seperate views for individual pages
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Find unique ID for each video when pressing new note button @done (14-11-06 11:31) @project(Backlog)
+ ✔ Make a seed video < @done (14-11-06 10:44) @project(Backlog)
+ ✔ Delete video functionality < @done (14-11-06 10:43) @project(Backlog)
  ✔ Dynamically add bookmark < @done (14-11-05 18:54) @project(Backlog)
  ✔ template video display using handlebars < @done (14-11-05 18:53) @project(Backlog)
  ✔ Pause video wtih external button << @done (14-11-05 18:53) @project(Backlog)

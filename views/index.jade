@@ -13,7 +13,7 @@ block content
 		.modal-dialog
 			.modal-content
 				.modal-body.upload-video
-					form.dropzone.dz-clickable.custom-drop(method="post", action="/submitPublic", enctype="multipart/form-data" name="image")
+					form.dropzone.dz-clickable.custom-drop(method="post", action="/newVideo", enctype="multipart/form-data" name="image")
 						input(type="text" name="video-title" placeholder="Title")
 						input(type="file", name="video")
 						input(type="submit")

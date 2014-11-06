@@ -4,10 +4,15 @@ videos.reset(bootstrappedVideos);
 
 var videoView = new VideoListView({
 	attributes: {
-		title: 'Cool video'
+		title: 'My Video Library'
 	},
 	collection: videos
 });
+
+// Render a note
+var renderNote = function(videoData){
+	var el = $('li');
+};
 
 $(function(){
 
@@ -15,30 +20,33 @@ $(function(){
 	videoView.render();
 	$('body').append(videoView.el);
 
-	var setCurTime = function(){
-		video.currentTime = 5;
-	};
-
-	/*var getCurTime = function(){
-		console.log(video.currentTime);
-	};*/
-
-	function newNote() {
-		console.log('test');
-	};
-
+	// Make a new note on video
 	$(document).on('click', '.toggle-new-note', function(e){
-		// need dynamic id
-		document.getElementById('545ab8d7e2dec2adaf0655ec_html5_api').pause();
-		console.log(document.getElementById('545ab8d7e2dec2adaf0655ec_html5_api').currentTime);
+		var videoContainer = $(this).closest('li');
+		var video = videoContainer.find('video');
+		var videoId = video.attr('id');
+		var thisVideo = document.getElementById(videoId);
+
+
+		thisVideo.pause();
+
+		
+		
+		console.log(thisVideo.currentTime);	
 	});
 
-/*	$(document).on('click', '.toggle-new-note', function(e){
-		console.log(e);
-		console.log(e.target);
-		currentVid = $(e.target).children().closest('video').first();
-		console.log('current Video', currentVid);
-		currentVid.pause();
-	});*/
+
+	// deleting a single video
+	$(document).on('click', '.deleteVideo', function(){
+		var videoContainer = $(this).closest('li');
+		var videoId = videoContainer.attr('data-video-container');
+
+		$.post('/deleteVideo', {id: videoId}, function(responseData){
+			console.log('responseData: ', responseData);
+			if(responseData.success === true){
+				videoContainer.remove();
+			}
+		});
+	});
 
 });

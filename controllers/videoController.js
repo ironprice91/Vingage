@@ -1,21 +1,16 @@
 var Video = require('../models/video.js');
 
 var videoController = {
-	addVideo: function(req,res){
-		var videoData = req.body;
-		var video = new Video(videoData);
-
-		video.save(function(err, video){
-			res.send(video);
-		});
-	},
 	deleteVideo: function(req,res){
-		var videoId = req.params.id;
-
+		var videoId = req.body.id;
 		console.log('video ID:', videoId);
 
-		Video.remove({_id: videoId}, function(err, results){
-			res.sendStatus(200);
+		Video.remove({_id: videoId}, function(err, result){
+			res.send({
+				err: err,
+				result: result,
+				success: err === null
+			});
 		});
 	}
 };

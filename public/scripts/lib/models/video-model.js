@@ -2,7 +2,7 @@
 var Video = Backbone.Model.extend({
 	idAttributes: '_id',
 	defaults: {
-		title: 'I love Internet Explorer',
+		title: 'Why Internet Explorer is the best',
 		videoSrc: '',
 		notes: [{
 			time: 0,
