@@ -1,17 +1,23 @@
 //- template view for a single video
 script#video-tpl(type="text/x-handlebars-template").
-	<ul>
-		<li data-video-container="{{_id}}">
+	<ul class="container">
+		<li class="video-container" data-video-container="{{_id}}">
 			<h3>{{title}}</h3>
-			<video class="video-js vjs-default-skin uploaded-video" id="{{_id}}" controls data-setup='{}' data-video="{{_id}}" >
+			<video class="col-md-8 video-js vjs-default-skin uploaded-video" id="{{_id}}" controls data-setup='{}' data-video="{{_id}}" width="650" height="400" >
 				<source src="{{videoSrc}}" type="video/mp4">
 				<source src="{{videoSrc}}" type="video/webm">
 				<p class="vjs-no-js"> To view this video please enable Javascript || consider upgrading to a web browser that supports HTML5 video</p>
 			</video>
-			
-			<button class="toggle-new-note btn btn-primary" data-key="{{_id}}">Add Note</button>
-			<button class="btn btn-default focus-video">Focus</button>
-			<button class="btn btn-danger deleteVideo">Delete</button>
-			<a class="btn btn-default download" href="{{videoSrc}}">Download</a>
+			<section class="col-md-4 video-control-center">
+				<button class="toggle-new-note btn btn-default" data-key="{{_id}}">Add Note</button>
+				<button class="btn btn-default focus-video">View</button>
+				<button class="btn btn-default deleteVideo">Delete</button>
+				<a class="btn btn-default download" href="{{videoSrc}}">Download</a>
+				<table class="list-notes">
+					<tr>
+						<td>This is where the note shoould be appended</td>
+					</tr>
+				</table>
+			</section>
 		</li>	
 	</ul>

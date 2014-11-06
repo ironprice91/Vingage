@@ -16,11 +16,13 @@ Backlog:
  ☐ Implement Sass (gulp sass/use libsass)
  ☐ Different video display sizes by buttons
  ☐ Include VTI file for  subtitiles and searchable video --
+ ☐ Highlight note when the time get scrubbed over <
 
  ToDo:
  ☐ Render note to your video container <<<
  ☐ Bookmark video/save in database <
  ☐ Seperate views for individual pages
+ ☐ Box shadow on focus video
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
  ✔ Find unique ID for each video when pressing new note button @done (14-11-06 11:31) @project(Backlog)

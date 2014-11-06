@@ -9,13 +9,12 @@ var videoView = new VideoListView({
 	collection: videos
 });
 
-// Render a note
-var renderNote = function(videoData){
-	var el = $('li');
-};
+// New note template
+var newNote = '<form id="submit-note"><textarea class="new-note" placeholder="Note..."></textarea><button type="submit" class="btn btn-primary submit-note-btn">Save</button><form>';
+
 
 $(function(){
-
+	//!!** var doc = $(document); //!!!! Is it weird ot variable cache the whole document
 	// render all videos and append
 	videoView.render();
 	$('body').append(videoView.el);
@@ -27,14 +26,27 @@ $(function(){
 		var videoId = video.attr('id');
 		var thisVideo = document.getElementById(videoId);
 
-
 		thisVideo.pause();
 
+		var tableOfNotes = videoContainer.find('table.list-notes');
+
+		// render note
+		tableOfNotes.append(newNote);
 		
-		
-		console.log(thisVideo.currentTime);	
+		$(document).on('submit', '#submit-note', function(e){
+			e.preventDefault();
+			var noteValue = $(this).find('textarea').val();
+			var note = $(this).find('table');
+			console.log(note);
+			note.append('<td>'+noteValue+'</td>');
+			console.log(thisVideo.currentTime);	
+			console.log(noteValue);
+
+			this.remove();
+		});
 	});
 
+	// Submiting a new note
 
 	// deleting a single video
 	$(document).on('click', '.deleteVideo', function(){

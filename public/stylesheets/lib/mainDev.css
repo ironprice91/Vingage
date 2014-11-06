@@ -26,6 +26,10 @@ border: 4px dashed black;
 }
 
 /*Video player*/
+.video-container {
+	display: block;
+}
+
 .vjs-default-skin { color: #cfcfcf; }
 .vjs-default-skin .vjs-play-progress,.vjs-default-skin .vjs-volume-level { background-color: #0084c0 }
 .vjs-default-skin .vjs-control-bar,.vjs-default-skin .vjs-big-play-button { background: rgba(153,153,153,0.66) }
@@ -33,6 +37,15 @@ border: 4px dashed black;
 .vjs-default-skin .vjs-control-bar { font-size: 90% }
 
 .uploaded-video {
-	width: 50;
-	height: 300;
+box-shadow: 10px 9px 15px rgba(56, 56, 56, 0.32);
+}
+
+
+/*table of notes*/
+.list-notes {
+width: 100%;
+}
+
+.new-note {
+	width: 100%;
 }
