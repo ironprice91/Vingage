@@ -8,6 +8,15 @@ var videoController = {
 		video.save(function(err, video){
 			res.send(video);
 		});
+	},
+	deleteVideo: function(req,res){
+		var videoId = req.params.id;
+
+		console.log('video ID:', videoId);
+
+		Video.remove({_id: videoId}, function(err, results){
+			res.sendStatus(200);
+		});
 	}
 };
 

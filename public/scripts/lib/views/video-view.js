@@ -6,5 +6,12 @@ var VideoView = Backbone.View.extend({
 				this.model.toJSON()
 			)
 		);
+	},
+	events: {
+		'click .deleteVideo' : 'deleteVideo' 
+	},
+	deleteVideo: function(){
+		console.log(this.model.attributes._id);
+		this.model.destroy();
 	}
 });

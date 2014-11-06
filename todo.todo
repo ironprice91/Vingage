@@ -4,11 +4,9 @@ Key:
  Reminders:
  ☐ Make devmain. js/css for public folder 
  ☐ When production link to main  js/css
- ✔ In your AWS S3 you removed the private folder @done (14-11-05 17:02)
 Backlog: 
  ☐ Api logins -
  ☐ Interactive chat with sockets -
- ☐ Delete video functionality <
  ☐ Delete user profile 
  ☐ Make a seed video <
  ☐ Add ability to stream - 
@@ -16,14 +14,18 @@ Backlog:
  ☐ set up heroku db
  ☐ Search videos
  ☐ List videos on seperate page -
+ ☐ Different video display sizes by buttons
 
  ToDo:
- ☐ Pause video wtih external button <<
- ☐ template video display using handlebars <
+ ☐ Find unique ID for each video when pressing new note button
  ☐ Bookmark video/save in database <
- ☐ Dynamically add bookmark <
+ ☐ Delete video functionality <
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Dynamically add bookmark < @done (14-11-05 18:54) @project(Backlog)
+ ✔ template video display using handlebars < @done (14-11-05 18:53) @project(Backlog)
+ ✔ Pause video wtih external button << @done (14-11-05 18:53) @project(Backlog)
+ ✔ In your AWS S3 you removed the private folder @done (14-11-05 17:02) @project(Key)
  ✘ Put modal form in backbone @cancelled (14-11-05 17:01) @project(Backlog)
  ✔ Implement backbone (see chatroom for template structure) < @done (14-11-05 17:01) @project(Backlog)
  ✔ show video via database not AWS server <<< @done (14-11-05 16:38) @project(Backlog)

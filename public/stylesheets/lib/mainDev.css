@@ -32,3 +32,7 @@ border: 4px dashed black;
 .vjs-default-skin .vjs-slider { background: rgba(153,153,153,0.22) }
 .vjs-default-skin .vjs-control-bar { font-size: 90% }
 
+.uploaded-video {
+	width: 50;
+	height: 300;
+}
