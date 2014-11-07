@@ -33,6 +33,7 @@ $(function(){
 		// render note
 		tableOfNotes.append(newNoteForm);
 		
+		// Submiting a new note
 		$(document).on('submit', '#submit-note', function(e){
 			e.preventDefault();
 			var noteValue = $(this).find('textarea').val();
@@ -43,15 +44,13 @@ $(function(){
 
 			$.post('/saveNote', {id:videoId,note:noteValue, time:thisNoteTime}, function(responseData){
 				console.log(responseData);
-			});
-
-			thisTable.append('<tr class="note-row"><td>'+noteValue+'</td><tr>');						
+			});						
 			
 			this.remove();
 		});
+
 	});
 
-	// Submiting a new note
 
 	// deleting a single video
 	$(document).on('click', '.deleteVideo', function(){
@@ -64,6 +63,17 @@ $(function(){
 				videoContainer.remove();
 			}
 		});
+	});
+
+	// Set time on video
+	$(document).on('click','.set-time', function(){
+		var videoContainer = $(this).closest('li');
+		var video = videoContainer.find('video');
+		var videoId = video.attr('id');
+		var thisVideo = document.getElementById(videoId);
+		var setTime = $(this).attr('data-set-time');
+
+		thisVideo.currentTime = Number(setTime);	
 	});
 
 });
