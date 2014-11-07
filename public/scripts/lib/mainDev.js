@@ -41,6 +41,8 @@ $(function(){
 
 			$(note.selector).append('<tr class="note-row"><td>'+noteValue+'</td><td>');
 			
+			
+			
 			console.log(thisVideo.currentTime);	
 			console.log(noteValue);
 

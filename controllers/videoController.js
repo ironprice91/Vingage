@@ -13,6 +13,22 @@ var videoController = {
 			});
 		});
 	}
+	// Add note to specific id
+	addNote : function(req,res){
+		var videoData = req.body;
+
+		Video.findById(videoData.id, function(err. result){
+			console.log(videoData.title);
+		});
+
+		// var note = 'something';
+		//var time = 'somethingElse';
+
+		// Use set so things don't get erased
+		/*Video.update({_id:id}, {$set: {notes:[{notes.time:time}, notes.note:note]}}, function(err, result){
+			console.log(result);
+		});*/
+	}
 };
 
 module.exports = videoController;
