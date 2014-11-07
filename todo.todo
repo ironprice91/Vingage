@@ -2,7 +2,6 @@ Key:
 < priority
 - not priority
  Reminders:
- ☐ Make devmain. js/css for public folder 
  ☐ When production link to main  js/css
  ☐ mouseover on upload
 Backlog: 
@@ -13,18 +12,19 @@ Backlog:
  ☐ Push to heroku
  ☐ set up heroku db
  ☐ Search videos
- ☐ search notes
  ☐ Implement Sass (gulp sass/use libsass)
  ☐ Include VTI file for  subtitiles and searchable video --
+ ☐ Search notes <<<
 
  ToDo:
- ☐ Highlight note when the time get scrubbed over <
+ ☐ Delete note
+ ☐ Seperate views for individual pages <<<
  ☐ Different video display sizes by buttons <<
- ☐ Display notes from database <<<
- ☐ Seperate views for individual pages
+ ☐ Highlight note when the time get scrubbed over <
  ☐ Box shadow on focus video
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Display notes from database <<<< @done (14-11-07 15:18) @project(Backlog)
  ✔ upload MIT lecture @done (14-11-07 14:41) @project(Backlog)
  ✔ Bookmark video/save in database <<<< @done (14-11-07 12:25) @project(Backlog)
  ✔ Adding new note for each video/ but not saved @done (14-11-07 10:11) @project(Backlog)

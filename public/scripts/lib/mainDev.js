@@ -45,7 +45,7 @@ $(function(){
 				console.log(responseData);
 			});
 
-			thisTable.append('<tr class="note-row"><td>'+noteValue+'</td><td>');						
+			thisTable.append('<tr class="note-row"><td>'+noteValue+'</td><tr>');						
 			
 			this.remove();
 		});

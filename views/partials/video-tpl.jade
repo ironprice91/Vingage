@@ -14,6 +14,9 @@ script#video-tpl(type="text/x-handlebars-template").
 				<button class="btn btn-default deleteVideo">Delete</button>
 				<a class="btn btn-default download" href="{{videoSrc}}">Download</a>
 				<table class="list-notes" data-note-container="{{_id}}" id="{{videoSrc}}">
+					{{#each notes}}
+						<tr class="note-row"><td>{{note}} {{time}}</td></tr>
+					{{/each}}
 				</table>
 			</section>
 		</li>	
