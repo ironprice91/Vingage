@@ -1,6 +1,8 @@
 extends layout
 
 block content
+	h1= title
+
 	video.video-js.vjs-default-skin.uploaded-video(controls width="650" height="400")
 		source(src="#{videoSrc}" type="video/mp4")
 		source(src="#{videoSrc}" type="video/webm")

@@ -3,8 +3,8 @@ Key:
 - not priority
  Reminders:
  ☐ When production link to main  js/css
- ☐ mouseover on upload
 Backlog: 
+ ☐ mouseover on upload
  ☐ Api logins -
  ☐ Interactive chat with sockets -
  ☐ Delete user profile 
@@ -17,15 +17,16 @@ Backlog:
  ☐ Search notes <<<
 
  ToDo:
- ☐ Click time to set the video time <<<<
  ☐ Sort notes by time <<<<
+ ☐ Delete note <<<
+ ☐ Convert time to minutes if needed << (do in mainDev.js/Check giithub)
  ☐ Seperate views for individual pages <<<
- ☐ Delete note
  ☐ Different video display sizes by buttons <<
  ☐ Highlight note when the time get scrubbed over <
  ☐ Box shadow on focus video
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Click time to set the video time <<<< @done (14-11-07 15:52) @project(Backlog)
  ✔ Display notes from database <<<< @done (14-11-07 15:18) @project(Backlog)
  ✔ upload MIT lecture @done (14-11-07 14:41) @project(Backlog)
  ✔ Bookmark video/save in database <<<< @done (14-11-07 12:25) @project(Backlog)
