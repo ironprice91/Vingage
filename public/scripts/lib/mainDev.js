@@ -10,7 +10,7 @@ var videoView = new VideoListView({
 });
 
 // New note template
-var newNote = '<form id="submit-note"><textarea class="new-note" placeholder="Note..."></textarea><button type="submit" class="btn btn-primary submit-note-btn">Save</button><form>';
+var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button type="submit" class="btn btn-primary submit-note-btn">Save</button><form>';
 
 
 $(function(){
@@ -31,18 +31,17 @@ $(function(){
 		var tableOfNotes = videoContainer.find('table.list-notes');
 
 		// render note
-		tableOfNotes.append(newNote);
+		tableOfNotes.append(newNoteForm);
 		
 		$(document).on('submit', '#submit-note', function(e){
 			e.preventDefault();
 			var noteValue = $(this).find('textarea').val();
-			var note = $(this).find('table');
-			console.log(note);
+			var thisTable = $(this).closest('table');
 
-			$(note.selector).append('<tr class="note-row"><td>'+noteValue+'</td><td>');
+			thisTable.append('<tr class="note-row"><td>'+noteValue+'</td><td>');						
 			
-			
-			
+
+
 			console.log(thisVideo.currentTime);	
 			console.log(noteValue);
 

@@ -22,8 +22,10 @@ Backlog:
  ☐ Different video display sizes by buttons <<
  ☐ Seperate views for individual pages
  ☐ Box shadow on focus video
+ ☐ upload MIT lecture
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Adding new note for each video/ but not saved @done (14-11-07 10:11) @project(Backlog)
  ✔ List videos on seperate page < @done (14-11-06 17:54) @project(Backlog)
  ✔ Render note to your video container <<< @done (14-11-06 16:22) @project(Backlog)
  ✔ Find unique ID for each video when pressing new note button @done (14-11-06 11:31) @project(Backlog)

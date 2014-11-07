@@ -12,12 +12,12 @@ var videoController = {
 				success: err === null
 			});
 		});
-	}
+	},
 	// Add note to specific id
 	addNote : function(req,res){
 		var videoData = req.body;
 
-		Video.findById(videoData.id, function(err. result){
+		Video.findById(videoData.id, function(err, result){
 			console.log(videoData.title);
 		});
 
