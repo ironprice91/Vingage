@@ -18,7 +18,8 @@ var videoController = {
 		var videoData = req.body;
 
 		Video.findById(videoData.id, function(err, result){
-			console.log(videoData.title);
+			console.log('!note:', videoData);	
+			
 		});
 
 		// var note = 'something';

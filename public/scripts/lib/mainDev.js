@@ -37,6 +37,12 @@ $(function(){
 			e.preventDefault();
 			var noteValue = $(this).find('textarea').val();
 			var thisTable = $(this).closest('table');
+			var thisNoteTime = thisVideo.currentTime;
+			console.log(thisNoteTime);
+
+			$.post('/saveNote', {note:noteValue, time:thisNoteTime}, function(responseData){
+				console.log(responseData);
+			});
 
 			thisTable.append('<tr class="note-row"><td>'+noteValue+'</td><td>');						
 			
