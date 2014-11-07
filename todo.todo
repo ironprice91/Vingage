@@ -4,7 +4,7 @@ Key:
  Reminders:
  ☐ Make devmain. js/css for public folder 
  ☐ When production link to main  js/css
- ☐ Fix video controller js!!
+ ☐ mouseover on upload
 Backlog: 
  ☐ Api logins -
  ☐ Interactive chat with sockets -
@@ -13,17 +13,19 @@ Backlog:
  ☐ Push to heroku
  ☐ set up heroku db
  ☐ Search videos
+ ☐ search notes
  ☐ Implement Sass (gulp sass/use libsass)
  ☐ Include VTI file for  subtitiles and searchable video --
- ☐ Highlight note when the time get scrubbed over <
 
  ToDo:
+ ☐ Highlight note when the time get scrubbed over <
  ☐ Different video display sizes by buttons <<
+ ☐ Display notes from database <<<
  ☐ Seperate views for individual pages
  ☐ Box shadow on focus video
- ☐ upload MIT lecture
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ upload MIT lecture @done (14-11-07 14:41) @project(Backlog)
  ✔ Bookmark video/save in database <<<< @done (14-11-07 12:25) @project(Backlog)
  ✔ Adding new note for each video/ but not saved @done (14-11-07 10:11) @project(Backlog)
  ✔ List videos on seperate page < @done (14-11-06 17:54) @project(Backlog)

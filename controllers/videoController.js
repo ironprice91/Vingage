@@ -1,5 +1,6 @@
 var Video = require('../models/video.js');
 
+// function to remove videojs id concat
 var realId = function(string){
 	return string.replace(/_html5_api/,'');
 };
@@ -30,13 +31,9 @@ var videoController = {
 
 		Video.findOneAndUpdate({_id: id}, {$push: {notes:oneNote}}, {safe: true, upsert:true}, function(err, result){
 				if(err){
-					console.log('TIME:', videoData.time);
 					console.log(err);	
-					return err;
 				} else {
-					console.log('NOTE:', videoData.note);
 					console.log(result);	
-					return result;	
 				}	
 		});
 	}
