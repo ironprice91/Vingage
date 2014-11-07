@@ -38,7 +38,9 @@ $(function(){
 			var noteValue = $(this).find('textarea').val();
 			var note = $(this).find('table');
 			console.log(note);
-			note.append('<td>'+noteValue+'</td>');
+
+			$(note.selector).append('<tr class="note-row"><td>'+noteValue+'</td><td>');
+			
 			console.log(thisVideo.currentTime);	
 			console.log(noteValue);
 

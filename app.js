@@ -48,14 +48,11 @@ app.use(passsportConfig.ensureAuthenticated);
 
 app.get('/', indexController.index);
 app.get('/view', indexController.view);
+app.get('/view/:id', indexController.focusVideo);
+
 app.post('/newVideo', multer(), indexController.newVideo);
 app.post('/deleteVideo', videoController.deleteVideo);
 
-// add new video
-// app.post('/addVideo', videoController.addVideo);
-
-// Delete new video
-// app.delete('/videos/:id', videoController.deleteVideo);
 
 var port = process.env.PORT || 6503;
 var server = app.listen(port, function() {

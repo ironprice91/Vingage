@@ -10,13 +10,10 @@ script#video-tpl(type="text/x-handlebars-template").
 			</video>
 			<section class="col-md-4 video-control-center">
 				<button class="toggle-new-note btn btn-default" data-key="{{_id}}">Add Note</button>
-				<button class="btn btn-default focus-video">View</button>
+				<a href="/view/{{_id}}" class="btn btn-default focus-video">View</a>
 				<button class="btn btn-default deleteVideo">Delete</button>
 				<a class="btn btn-default download" href="{{videoSrc}}">Download</a>
 				<table class="list-notes">
-					<tr>
-						<td>This is where the note shoould be appended</td>
-					</tr>
 				</table>
 			</section>
 		</li>	

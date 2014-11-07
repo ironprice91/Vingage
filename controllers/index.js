@@ -78,6 +78,15 @@ var indexController = {
         console.log('Result: ', result);
       });
 
+  },
+
+  focusVideo: function(req,res){
+    var id = req.params.id;
+
+    Video.findOne({_id: id}, function(err, result){
+      console.log(result);
+      res.render('focusVideo', result);
+    });
   }
 };
 

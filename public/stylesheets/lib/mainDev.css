@@ -49,3 +49,7 @@ width: 100%;
 .new-note {
 	width: 100%;
 }
+
+.note-row {
+border: 1px solid rgb(140, 140, 140);
+}
