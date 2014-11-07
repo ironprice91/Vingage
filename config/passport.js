@@ -2,7 +2,8 @@ var User = require('../models/user.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-// seed
+// Uncomment to seed a user
+/*// seed
 var user = new User({
 	username: 'Michael',
 	email: 'michael@example.com',
@@ -14,7 +15,7 @@ user.save(function(err, user){
 	} else {
 		console.log('Seeded user');
 	}
-});
+});*/
 
 // sessions serialization
 passport.serializeUser(function(user, next){

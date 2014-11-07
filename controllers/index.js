@@ -31,7 +31,7 @@ var indexController = {
         user: req.user,
         videos: videos
       });
-      console.log(videos);
+      // console.log(videos);
     });
   },
 
@@ -45,7 +45,7 @@ var indexController = {
   },
   // Add new Video method
   newVideo: function(req, res){
-    console.log('Your file info', req.files);
+    // console.log('Your file info', req.files);
 
     var fName = req.files.video.name;
     var fPath = req.files.video.path;
@@ -69,7 +69,7 @@ var indexController = {
 
     // Database for holding the AWS url to file 
     // Might have to do /public in your hard string url
-      console.log('name: ', fName);
+      // console.log('name: ', fName);
       var newVideo = new Video({
       title: 'title',
       videoSrc: 'https://s3.amazonaws.com/refactoru/public/' + fName

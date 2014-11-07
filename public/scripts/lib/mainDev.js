@@ -39,18 +39,14 @@ $(function(){
 			var thisTable = $(this).closest('table');
 			var thisNoteTime = thisVideo.currentTime;
 			console.log(thisNoteTime);
+			console.log(noteValue);
 
-			$.post('/saveNote', {note:noteValue, time:thisNoteTime}, function(responseData){
+			$.post('/saveNote', {id:videoId,note:noteValue, time:thisNoteTime}, function(responseData){
 				console.log(responseData);
 			});
 
 			thisTable.append('<tr class="note-row"><td>'+noteValue+'</td><td>');						
 			
-
-
-			console.log(thisVideo.currentTime);	
-			console.log(noteValue);
-
 			this.remove();
 		});
 	});

@@ -1,5 +1,9 @@
 var Video = require('../models/video.js');
 
+var realId = function(string){
+	return string.replace(/_html5_api/,'');
+};
+
 var videoController = {
 	deleteVideo: function(req,res){
 		var videoId = req.body.id;
@@ -15,20 +19,26 @@ var videoController = {
 	},
 	// Add note to specific id
 	addNote : function(req,res){
-		var videoData = req.body;
+		var videoId = req.body.id;		
+		var videoData = req.body
+		var id = realId(videoId);
 
-		Video.findById(videoData.id, function(err, result){
-			console.log('!note:', videoData);	
-			
+		var oneNote = {
+			time: videoData.time,
+			note: videoData.note 
+		};
+
+		Video.findOneAndUpdate({_id: id}, {$push: {notes:oneNote}}, {safe: true, upsert:true}, function(err, result){
+				if(err){
+					console.log('TIME:', videoData.time);
+					console.log(err);	
+					return err;
+				} else {
+					console.log('NOTE:', videoData.note);
+					console.log(result);	
+					return result;	
+				}	
 		});
-
-		// var note = 'something';
-		//var time = 'somethingElse';
-
-		// Use set so things don't get erased
-		/*Video.update({_id:id}, {$set: {notes:[{notes.time:time}, notes.note:note]}}, function(err, result){
-			console.log(result);
-		});*/
 	}
 };
 
