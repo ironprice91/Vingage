@@ -1,5 +1,6 @@
 extends layout
 
 block content
-	video
-		source(src="#{videoSrc}")
+	video.col-md-8.video-js.vjs-default-skin.uploaded-video(controls autoplay)
+		source(src="#{videoSrc}" type="video/mp4")
+		source(src="#{videoSrc}" type="video/webm")
