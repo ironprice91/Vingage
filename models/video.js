@@ -6,6 +6,7 @@ var videoSchema = mongoose.Schema({
 	videoSrc: String,
 	notes: [{
 		time: Number,
+		displayTime: String,
 		note: String
 	}]
 });

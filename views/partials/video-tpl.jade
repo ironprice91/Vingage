@@ -15,7 +15,7 @@ script#video-tpl(type="text/x-handlebars-template").
 				<a class="btn btn-default download" href="{{videoSrc}}">Download</a>
 				<table class="list-notes" data-note-container="{{_id}}" id="{{videoSrc}}">
 					{{#each notes}}
-						<tr class="note-row"><td>{{note}} <a class="set-time" data-set-time="{{time}}">{{time}}</a></td></tr>
+						<tr class="note-row"><td>{{note}} <a class="set-time" data-set-time="{{time}}">{{displayTime}}</a></td></tr>
 					{{/each}}
 				</table>
 			</section>

@@ -26,6 +26,7 @@ var videoController = {
 
 		var oneNote = {
 			time: videoData.time,
+			displayTime: videoData.displayTime,
 			note: videoData.note 
 		};
 

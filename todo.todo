@@ -17,6 +17,7 @@ Backlog:
  ☐ Search notes <<<
 
  ToDo:
+ ☐ Ajax note <<<<<
  ☐ Sort notes by time <<<<
  ☐ Delete note <<<
  ☐ Convert time to minutes if needed << (do in mainDev.js/Check giithub)

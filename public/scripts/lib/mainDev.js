@@ -12,6 +12,16 @@ var videoView = new VideoListView({
 // New note template
 var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button type="submit" class="btn btn-primary submit-note-btn">Save</button><form>';
 
+// Display time
+var timeConvert = function(num){
+	var minutes = num/60;
+	var wholeNumber = Math.floor(minutes);
+	var seconds = num - (wholeNumber*60);
+	var roundedSeconds = Math.floor((seconds));
+	var flooredSeconds = (roundedSeconds);
+
+	return (wholeNumber+':'+flooredSeconds);
+};
 
 $(function(){
 	//!!** var doc = $(document); //!!!! Is it weird ot variable cache the whole document
@@ -39,10 +49,11 @@ $(function(){
 			var noteValue = $(this).find('textarea').val();
 			var thisTable = $(this).closest('table');
 			var thisNoteTime = thisVideo.currentTime;
+			var timeDisplay = timeConvert(thisNoteTime);
 			console.log(thisNoteTime);
 			console.log(noteValue);
 
-			$.post('/saveNote', {id:videoId,note:noteValue, time:thisNoteTime}, function(responseData){
+			$.post('/saveNote', {id:videoId, note:noteValue, time:thisNoteTime, displayTime:timeDisplay}, function(responseData){
 				console.log(responseData);
 			});						
 			
