@@ -8,6 +8,14 @@ block focus
 	video.video-js.vjs-default-skin.uploaded-video(controls width="1080" height="600")
 		source(src="#{videoSrc}" type="video/mp4")
 		source(src="#{videoSrc}" type="video/webm")
-
-	section.command-center
+	
+	section.video-control-center.command-center
+		button.toggle-new-note.btn.btn-default(data-key="#{_id}") Add Note
 		a.btn.btn-default(href="/") Library
+		a.btn.btn-default.download(href="#{videoSrc}") Download
+		table.list-notes(data-note-container="#{_id}" id="{videoSrc}")
+			for note in notes
+				li= note.note			
+				li= note.displayTime			
+
+
