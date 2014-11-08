@@ -18,9 +18,8 @@ var timeConvert = function(num){
 	var wholeNumber = Math.floor(minutes);
 	var seconds = num - (wholeNumber*60);
 	var roundedSeconds = Math.floor((seconds));
-	var flooredSeconds = (roundedSeconds);
 
-	return (wholeNumber+':'+flooredSeconds);
+	return (wholeNumber+':'+roundedSeconds);
 };
 
 $(function(){

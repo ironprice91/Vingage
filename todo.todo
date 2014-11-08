@@ -20,13 +20,13 @@ Backlog:
  ☐ Ajax note <<<<<
  ☐ Sort notes by time <<<<
  ☐ Delete note <<<
- ☐ Convert time to minutes if needed << (do in mainDev.js/Check giithub)
- ☐ Seperate views for individual pages <<<
  ☐ Different video display sizes by buttons <<
  ☐ Highlight note when the time get scrubbed over <
- ☐ Box shadow on focus video
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Box shadow on focus video @done (14-11-07 18:38) @project(Backlog)
+ ✔ Seperate views for individual pages <<< @done (14-11-07 18:38) @project(Backlog)
+ ✔ Convert time to minutes if needed << (do in mainDev.js/Check giithub) @done (14-11-07 18:38) @project(Backlog)
  ✔ Click time to set the video time <<<< @done (14-11-07 15:52) @project(Backlog)
  ✔ Display notes from database <<<< @done (14-11-07 15:18) @project(Backlog)
  ✔ upload MIT lecture @done (14-11-07 14:41) @project(Backlog)

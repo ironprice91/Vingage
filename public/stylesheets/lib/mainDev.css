@@ -27,7 +27,7 @@ border: 4px dashed black;
 
 /*Video player*/
 .video-container {
-	display: block;
+display: block;
 }
 
 .vjs-default-skin { color: #cfcfcf; }
@@ -47,7 +47,7 @@ width: 100%;
 }
 
 .new-note {
-	width: 100%;
+width: 100%;
 }
 
 .note-row {
@@ -56,4 +56,9 @@ border: 1px solid rgb(140, 140, 140);
 
 .set-time {
 cursor: pointer;
+}
+
+/*Focus view*/
+.command-center {
+margin-top: 15px;
 }
