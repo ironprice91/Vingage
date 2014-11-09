@@ -29,11 +29,13 @@ var timeConvert = function(num){
 
 $(function(){
 	$('#username-input').focus();
-	
+
 	// render all videos and append
 	videoView.render();
 	$('body').append(videoView.el);
 
+	// 
+	
 	// Make a new note on video
 	$(document).on('click', '.toggle-new-note', function(e){
 		var videoContainer = $(this).closest('li');
