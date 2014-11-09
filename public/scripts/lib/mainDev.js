@@ -18,8 +18,13 @@ var timeConvert = function(num){
 	var wholeNumber = Math.floor(minutes);
 	var seconds = num - (wholeNumber*60);
 	var roundedSeconds = Math.floor((seconds));
+	var secondsArray = roundedSeconds.toString().split('');
 
-	return (wholeNumber+':'+roundedSeconds);
+	if(secondsArray.length === 1){
+		return (wholeNumber+':0'+roundedSeconds);
+	} else {
+		return (wholeNumber+':'+roundedSeconds);
+	}
 };
 
 $(function(){
