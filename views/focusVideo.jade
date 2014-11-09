@@ -13,9 +13,9 @@ block focus
 		button.toggle-new-note.btn.btn-default(data-key="#{_id}") Add Note
 		a.btn.btn-default(href="/") Library
 		a.btn.btn-default.download(href="#{videoSrc}") Download
-		table.list-notes(data-note-container="#{_id}" id="{videoSrc}")
+		table.list-notes(data-note-container="#{_id}" id="#{videoSrc}")
 			for note in notes
-				li= note.note			
-				li= note.displayTime			
-
-
+				table.list-notes(data-note-container="#{_id}" id="#{videoSrc}")
+					tr.note-row
+						td #{note.note}
+							a.set-time(data-set-time="#{time}") #{note.displayTime}

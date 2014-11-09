@@ -1,3 +1,82 @@
+/*Login video*/
+.splash-background {
+position: absolute;
+z-index: -1;
+top: 0px;
+left: 0px;
+bottom: 0px;
+right: 0px;
+overflow: hidden;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+}
+
+.splash-video {
+visibility: visible;
+margin: auto;
+position: absolute;
+z-index: -1;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+width: 100%;
+height: auto;
+}
+
+.sign-in-form {
+position: absolute;
+top: 0px;
+bottom: 0;
+left: 0;
+right: 0;
+margin: auto;
+margin-top: 10%;
+height: 50%;
+width: 25%;
+font-size: 15px;
+border: 1px solid transparent;
+border-radius: 10px;
+background: rgba(255, 255, 255, 0.29);
+overflow: hidden;
+color: white;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.splash-logo{
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+color: #79BD0F;
+font-family: 'Shadows Into Light', cursive;
+font-size: 50px;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.sign-in, .sign-up {
+display: table-caption;
+}
+
+.login-forms{
+width: 390px;
+margin-bottom: 5px;
+border-radius: 5px;
+height: 2.1em;
+color: white;
+}
+
+.btn-splash{
+width: 390px;
+margin-bottom: 5px;
+border-radius: 5px;
+background-color: rgba(121, 189, 15, 0.59);
+}
+
+input.login-forms {
+color: black;
+}
+
 /*navbar*/
 .main-nav {
 background: white;
@@ -5,10 +84,6 @@ color: black;
 border: 0;
 border-radius: 0;
 border-bottom: 2px solid #888888;
-}
-
-.sign-in {
-box-shadow: 0px 5px 15px #888888;
 }
 
 /*upload modal*/
@@ -62,3 +137,5 @@ cursor: pointer;
 .command-center {
 margin-top: 15px;
 }
+
+

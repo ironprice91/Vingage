@@ -5,7 +5,7 @@ block navbar
 		section.container
 			p= user.username
 			p.pull-right.logout: a(href="/auth/logout") Logout
-			button(data-toggle="modal" data-target="#uploadModal"): i.fa.fa-video-camera
+			button.btn.btn-primary(data-toggle="modal" data-target="#uploadModal") Upload Video
 
 block content
 	//- Upload template
