@@ -1,22 +1,11 @@
 extends layout
 
-block navbar
-	nav.navbar.navbar-inverse.main-nav
-		div.container
-			ul.nav.navbar-nav
-				a.navbar-brand.nav-logo Vingage
-			div.navbar-form
-				button.btn.btn-default(data-toggle="modal" data-target="#uploadModal") Upload Video
-				a.btn.btn-default(href="/") QuickView
-				a.btn.btn-default(href="#") Library
-				a.btn.btn-default.pull-right.logout.navbar-right(href="/auth/logout") Logout
-
 block focus
 	div.container
 		h1= title
 	hr
 	section.video-background
-	li
+	li.video-container(data-video-container="#{_id}")
 		video.video-js.vjs-default-skin.uploaded-video(controls width="1080" height="600" id="#{_id}" data-setup='{}')
 			source(src="#{videoSrc}" type="video/mp4")
 			source(src="#{videoSrc}" type="video/webm")

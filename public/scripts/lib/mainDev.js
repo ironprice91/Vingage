@@ -28,7 +28,8 @@ var timeConvert = function(num){
 };
 
 $(function(){
-	//!!** var doc = $(document); //!!!! Is it weird ot variable cache the whole document
+	$('#username-input').focus();
+	
 	// render all videos and append
 	videoView.render();
 	$('body').append(videoView.el);

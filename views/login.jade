@@ -14,7 +14,7 @@ block content
 		div.col-md-offset-1
 			h3 Sign in
 			form.sign-in(action="/auth/login" method="post")
-				input.login-forms(type="text" name="username" placeholder="Username")
+				input#username-input.login-forms(type="text" name="username" placeholder="Username")
 				input.login-forms(type="password" name="password" placeholder="Password")
 				button.btn.btn-splash(type="submit") Login
 
