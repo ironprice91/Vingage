@@ -1,9 +1,20 @@
 extends layout
 
+block navbar
+	nav.navbar.navbar-inverse.main-nav
+		div.container
+			ul.nav.navbar-nav
+				a.navbar-brand.nav-logo Vingage
+			div.navbar-form
+				button.btn.btn-default(data-toggle="modal" data-target="#uploadModal") Upload Video
+				a.btn.btn-default(href="/") QuickView
+				a.btn.btn-default(href="#") Library
+				a.btn.btn-default.pull-right.logout.navbar-right(href="/auth/logout") Logout
+
 block focus
 	div.container
 		h1= title
-	
+	hr
 	section.video-background
 	li
 		video.video-js.vjs-default-skin.uploaded-video(controls width="1080" height="600" id="#{_id}" data-setup='{}')
@@ -11,7 +22,6 @@ block focus
 			source(src="#{videoSrc}" type="video/webm")
 		section.video-control-center.command-center
 			button.toggle-new-note.btn.btn-default(data-key="#{_id}") Add Note
-			a.btn.btn-default(href="/") Library
 			a.btn.btn-default.download(href="#{videoSrc}") Download
 			table.list-notes.table(data-note-container="#{_id}" id="#{videoSrc}")
 				for note in notes

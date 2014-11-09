@@ -6,18 +6,28 @@ html(lang='en')
 		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css")
 		link(rel="stylesheet", href="http://vjs.zencdn.net/4.9/video-js.css")
 		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css")
+		link(href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css')
 		link(rel="stylesheet", href="/stylesheets/lib/mainDev.css")
 
 	body
 		block navbar
+			nav.navbar.navbar-inverse.main-nav
+				div.container
+					ul.nav.navbar-nav
+						a.navbar-brand.nav-logo Vingage
+					div.navbar-form
+						button.btn.btn-default(data-toggle="modal" data-target="#uploadModal") Upload Video
+						a.btn.btn-default(href="/") QuickView
+						a.btn.btn-default(href="#") Library
+						a.btn.btn-default.pull-right.logout.navbar-right(href="/auth/logout") Logout
 
-	section.container
-		block content
-		block focus
+		section.container
+			block content
+			block focus
 
-		//- Handlebars template
-		include partials/video-tpl
-		include partials/video-list-tpl
+			//- Handlebars template
+			include partials/video-tpl
+			include partials/video-list-tpl
 	
 	//- external scripts
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js") 

@@ -4,15 +4,15 @@ videos.reset(bootstrappedVideos);
 
 var videoView = new VideoListView({
 	attributes: {
-		title: 'My Video Library'
+		title: 'Video Quick View'
 	},
 	collection: videos
 });
 
 // New note template
-var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button type="submit" class="btn btn-primary submit-note-btn">Save</button><form>';
+var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button class="cancel-note btn btn-danger">Cancel</button><button type="submit" class="btn btn-primary submit-note-btn">Save</button><form>';
 
-// Display time
+// Display time (refactor to use % modulus)
 var timeConvert = function(num){
 	var minutes = num/60;
 	var wholeNumber = Math.floor(minutes);
@@ -45,8 +45,14 @@ $(function(){
 		var tableOfNotes = videoContainer.find('table.list-notes');
 
 		// render note
-		tableOfNotes.append(newNoteForm);
+		tableOfNotes.prepend(newNoteForm);
 		
+		// Deleting note
+		$(document).on('click', '.cancel-note', function(e){
+			e.preventDefault();
+			$('#submit-note').remove();
+		});
+
 		// Submiting a new note
 		$(document).on('submit', '#submit-note', function(e){
 			e.preventDefault();
@@ -65,6 +71,7 @@ $(function(){
 
 			this.remove();
 		});
+
 
 	});
 

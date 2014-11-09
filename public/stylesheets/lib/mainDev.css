@@ -89,6 +89,7 @@ border-bottom: 2px solid #888888;
 .nav-logo{
 color: #79BD0F !important;
 font-family: 'Shadows Into Light', cursive;
+font-size: 29px;
 text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -109,6 +110,7 @@ border: 4px dashed black;
 .list-library {
 height: 366px;
 overflow: scroll;
+padding-left: 1px;
 }
 
 /*Video player*/
@@ -147,6 +149,11 @@ cursor: pointer;
 /*Focus view*/
 .command-center {
 margin-top: 15px;
+}
+
+/*Quick View*/
+.quick-view-title {
+padding-left: 53px;
 }
 
 

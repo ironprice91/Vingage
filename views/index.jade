@@ -1,15 +1,6 @@
 extends layout
 
-block navbar
-	nav.navbar.navbar-inverse.main-nav
-		ul.nav.navbar-nav
-			a.navbar-brand.nav-logo Vingage
-		div.navbar-form
-			button.btn.btn-primary(data-toggle="modal" data-target="#uploadModal") Upload Video
-			button.btn.pull-right.logout.navbar-right: a(href="/auth/logout") Logout
-
 block content
-	p= user.username
 	//- Upload template
 	.modal.fade(id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
 		.modal-dialog

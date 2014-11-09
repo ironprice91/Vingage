@@ -17,18 +17,20 @@ Backlog:
  ☐ Search notes <<<
 
  ToDo:
- ☐ Ajax note <<<<<
+ ☐ Get notes to work in focus view <<<<<
  ☐ Sort notes by time <<<<
+ ☐ Make library menu <<<<
  ☐ Delete note <<<
  ☐ Upload by drag and drop <<<<
  ☐ Different video display sizes by buttons <<
  ☐ Highlight note when the time get scrubbed over < (TRY table hover when time scrub)
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Ajax note <<<<< @done (14-11-09 10:25) @project(Backlog)
  ✔ Allow access for notes in indexController/focus method <<<<<  @done (14-11-07 19:23) @project(Backlog)
- ✔ Box shadow on focus video @done (14-11-07 18:38) @project(Backlog)
  ✔ Seperate views for individual pages <<< @done (14-11-07 18:38) @project(Backlog)
  ✔ Convert time to minutes if needed << (do in mainDev.js/Check giithub) @done (14-11-07 18:38) @project(Backlog)
+ ✔ Box shadow on focus video @done (14-11-07 18:38) @project(Backlog)
  ✔ Click time to set the video time <<<< @done (14-11-07 15:52) @project(Backlog)
  ✔ Display notes from database <<<< @done (14-11-07 15:18) @project(Backlog)
  ✔ upload MIT lecture @done (14-11-07 14:41) @project(Backlog)
