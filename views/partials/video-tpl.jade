@@ -13,11 +13,13 @@ script#video-tpl(type="text/x-handlebars-template").
 				<a href="/view/{{_id}}" class="btn btn-default focus-video">View</a>
 				<button class="btn btn-default deleteVideo">Delete</button>
 				<a class="btn btn-default download" href="{{videoSrc}}">Download</a>
-				<table class="list-notes" data-note-container="{{_id}}" id="{{videoSrc}}">
-					{{#each notes}}
-						<tr class="note-row"><td>{{note}} <a class="set-time" data-set-time="{{time}}">{{displayTime}}</a></td></tr>
-					{{/each}}
-				</table>
+				<section class="list-library">
+					<table class="list-notes table table-hover" data-note-container="{{_id}}" id="{{videoSrc}}">
+						{{#each notes}}
+							<tr class="note-row"><td>{{note}} <a class="set-time" data-set-time="{{time}}">{{displayTime}}</a></td></tr>
+						{{/each}}
+					</table>
+				</section>
 			</section>
 		</li>	
 	</ul>

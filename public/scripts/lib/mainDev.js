@@ -61,6 +61,8 @@ $(function(){
 				console.log(responseData);
 			});						
 			
+			thisTable.append('<tr class="note-row"><td>'+noteValue+' <a class="set-time" data-set-time="'+thisNoteTime+'">'+timeDisplay+'</a></td></tr>')
+
 			this.remove();
 		});
 
@@ -82,6 +84,7 @@ $(function(){
 
 	// Set time on video
 	$(document).on('click','.set-time', function(){
+		console.log('test');
 		var videoContainer = $(this).closest('li');
 		var video = videoContainer.find('video');
 		var videoId = video.attr('id');

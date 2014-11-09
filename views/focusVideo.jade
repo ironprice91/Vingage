@@ -5,17 +5,16 @@ block focus
 		h1= title
 	
 	section.video-background
-	video.video-js.vjs-default-skin.uploaded-video(controls width="1080" height="600")
-		source(src="#{videoSrc}" type="video/mp4")
-		source(src="#{videoSrc}" type="video/webm")
-	
-	section.video-control-center.command-center
-		button.toggle-new-note.btn.btn-default(data-key="#{_id}") Add Note
-		a.btn.btn-default(href="/") Library
-		a.btn.btn-default.download(href="#{videoSrc}") Download
-		table.list-notes(data-note-container="#{_id}" id="#{videoSrc}")
-			for note in notes
-				table.list-notes(data-note-container="#{_id}" id="#{videoSrc}")
-					tr.note-row
-						td #{note.note}
-							a.set-time(data-set-time="#{note.time}") #{note.displayTime}
+	li
+		video.video-js.vjs-default-skin.uploaded-video(controls width="1080" height="600" id="#{_id}" data-setup='{}')
+			source(src="#{videoSrc}" type="video/mp4")
+			source(src="#{videoSrc}" type="video/webm")
+		section.video-control-center.command-center
+			button.toggle-new-note.btn.btn-default(data-key="#{_id}") Add Note
+			a.btn.btn-default(href="/") Library
+			a.btn.btn-default.download(href="#{videoSrc}") Download
+			table.list-notes.table(data-note-container="#{_id}" id="#{videoSrc}")
+				for note in notes
+						tr.note-row
+							td #{note.note}
+								a.set-time(data-set-time="#{note.time}") #{note.displayTime}

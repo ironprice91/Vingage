@@ -17,12 +17,12 @@ Backlog:
  ☐ Search notes <<<
 
  ToDo:
- ☐ Upload by drag and drop <<<<
  ☐ Ajax note <<<<<
  ☐ Sort notes by time <<<<
  ☐ Delete note <<<
+ ☐ Upload by drag and drop <<<<
  ☐ Different video display sizes by buttons <<
- ☐ Highlight note when the time get scrubbed over <
+ ☐ Highlight note when the time get scrubbed over < (TRY table hover when time scrub)
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
  ✔ Allow access for notes in indexController/focus method <<<<<  @done (14-11-07 19:23) @project(Backlog)
