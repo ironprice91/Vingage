@@ -43,7 +43,7 @@ var videoController = {
 		var id = realId(videoId);
 		console.log('HEY!', Video);
 
-		Video.remove({_id: id}, function(err, result){
+		Video.update({}, {$pull: {"notes" : {_id:id}}}, function(err, result){
 			console.log(id);
 			res.send({
 				err: err,
