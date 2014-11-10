@@ -2,7 +2,7 @@
 script#video-tpl(type="text/x-handlebars-template").
 	<ul class="container">
 		<li class="video-container" data-video-container="{{_id}}">
-			<h3>{{title}}</h3>
+			<h3><a href="/view/{{_id}}" class="focus-video">{{title}}</a></h3>
 			<video class="col-md-8 video-js vjs-default-skin uploaded-video vjs-big-play-centered" id="{{_id}}" controls data-setup='{}' data-video="{{_id}}" width="650" height="400" >
 				<source src="{{videoSrc}}" type="video/mp4">
 				<source src="{{videoSrc}}" type="video/webm">
@@ -10,14 +10,13 @@ script#video-tpl(type="text/x-handlebars-template").
 			</video>
 			<section class="col-md-5 video-control-center">
 				<button class="toggle-new-note btn btn-default" data-key="{{_id}}">Add Note</button>
-				<a href="/view/{{_id}}" class="btn btn-default focus-video">View</a>
 				<button class="btn btn-default deleteVideo">Delete</button>
 				<button class="btn btn-default theater-mode"data-toggle="modal" data-target="#theater-mode">Theater</button>
 				<a class="btn btn-default download" href="{{videoSrc}}">Download</a>
 				<section class="list-library">
 					<table class="list-notes table table-hover" data-note-container="{{_id}}" id="{{videoSrc}}">
 						{{#each notes}}
-							<tr class="note-row"><td>{{note}} <a class="set-time" data-set-time="{{time}}">{{displayTime}}</a></td></tr>
+						<tr class="note-row" data-note="{{_id}}" id="{{_id}}"><td>{{note}} <a class="set-time" data-set-time="{{time}}">{{displayTime}}</a></td></tr>
 						{{/each}}
 					</table>
 				</section>

@@ -38,6 +38,20 @@ var videoController = {
 				}	
 		});
 	},
+	deleteNote: function(req,res){
+		var videoId = req.body.id;
+		var id = realId(videoId);
+		console.log('HEY!', Video);
+
+		Video.remove({_id: id}, function(err, result){
+			console.log(id);
+			res.send({
+				err: err,
+				result: result,
+				success: err === null
+			});
+		});
+	},
 	theaterMode: function(req, res){
 		var videoId = req.body.id;
 		var id = realId(videoId);

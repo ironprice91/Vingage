@@ -114,6 +114,10 @@ padding-left: 1px;
 }
 
 /*Video player*/
+a.focus-video {
+color: black;
+}
+
 .video-container {
 display: block;
 }
@@ -131,7 +135,7 @@ box-shadow: 10px 9px 15px rgba(56, 56, 56, 0.32);
 
 /*table of notes*/
 .list-notes {
-width: 100%;
+width: 99%;
 }
 
 .new-note {
@@ -144,6 +148,13 @@ border: 1px solid rgb(140, 140, 140);
 
 .set-time {
 cursor: pointer;
+}
+
+.popover-btn {
+width: 80px;
+margin-bottom: 5px;
+background-color: rgba(255, 255, 255, 0.59);
+color: black;
 }
 
 /*Focus view*/

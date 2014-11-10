@@ -12,6 +12,13 @@ var videoView = new VideoListView({
 // New note template
 var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button class="cancel-note btn btn-danger">Cancel</button><button type="submit" class="btn btn-primary submit-note-btn">Save</button><form>';
 
+// Popover for editing notes
+var notePopover = '<button class="btn btn-success popover-btn edit-note">Edit  </button>'+
+    '<button class="btn btn-danger popover-btn delete-note">Delete</button>'+
+    '<button id="close-popover" data-toggle="clickover" class="btn btn-small btn-primary popover-btn" onclick="$(&quot;.note-row&quot;).popover(&quot;hide&quot;);">Close</button>';
+
+
+
 // Display time (refactor to use % modulus)
 var timeConvert = function(num){
 	var minutes = num/60;
@@ -34,7 +41,31 @@ $(function(){
 	videoView.render();
 	$('body').append(videoView.el);
 
-	// 
+	// toggle popover
+	$(document).on('click', '.note-row', function(){
+		$('.note-row').popover({
+			animation: true,
+			content: notePopover,
+			html: true
+		});
+	});
+
+	// Delete note
+	$(document).on('click', '.delete-note', function(){
+		var noteContainer = $(this).parent();
+		var noteID = noteContainer.parent().prev().attr('id'); 
+		console.log(noteID);
+		$('#'+noteID).remove();
+
+		$.post('/deleteNote', {id: noteID}, function(responseData){
+			console.log('test1', responseData.err);
+			if(responseData.err === null){
+				$('#'+noteID).remove();
+				$('.popover').remove();
+			}
+		});
+
+	});
 
 	// Make a new note on video
 	$(document).on('click', '.toggle-new-note', function(e){
@@ -50,7 +81,7 @@ $(function(){
 		// render note
 		tableOfNotes.prepend(newNoteForm);
 		
-		// Deleting note
+		// Deleting note form
 		$(document).on('click', '.cancel-note', function(e){
 			e.preventDefault();
 			$('#submit-note').remove();
@@ -73,6 +104,7 @@ $(function(){
 			thisTable.append('<tr class="note-row"><td>'+noteValue+' <a class="set-time" data-set-time="'+thisNoteTime+'">'+timeDisplay+'</a></td></tr>')
 
 			this.remove();
+			thisVideo.play();
 		});
 
 
@@ -119,14 +151,6 @@ $(function(){
 		});
 
 	});
-
-
-
-
-
-
-
-
 
 
 });
