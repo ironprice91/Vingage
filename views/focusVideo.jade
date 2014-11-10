@@ -5,7 +5,7 @@ block focus
 		h1= title
 	hr
 	li.video-container(data-video-container="#{_id}")
-		video.video-js.vjs-default-skin.uploaded-video(controls width="1080" height="600" id="#{_id}" data-setup='{}')
+		video.video-js.vjs-default-skin.vjs-big-play-centered.uploaded-video(controls width="1080" height="600" id="#{_id}" data-setup='{}')
 			source(src="#{videoSrc}" type="video/mp4")
 			source(src="#{videoSrc}" type="video/webm")
 		section.video-control-center.command-center

@@ -118,11 +118,11 @@ padding-left: 1px;
 display: block;
 }
 
-.vjs-default-skin { color: #cfcfcf; }
-.vjs-default-skin .vjs-play-progress,.vjs-default-skin .vjs-volume-level { background-color: #0084c0 }
-.vjs-default-skin .vjs-control-bar,.vjs-default-skin .vjs-big-play-button { background: rgba(153,153,153,0.66) }
-.vjs-default-skin .vjs-slider { background: rgba(153,153,153,0.22) }
+.vjs-default-skin { color: #fffefe; }
+.vjs-default-skin .vjs-play-progress,
+.vjs-default-skin .vjs-volume-level { background-color: #ffffff }
 .vjs-default-skin .vjs-control-bar { font-size: 90% }
+
 
 .uploaded-video {
 box-shadow: 10px 9px 15px rgba(56, 56, 56, 0.32);
