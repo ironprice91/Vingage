@@ -37,6 +37,14 @@ var videoController = {
 					console.log(result);	
 				}	
 		});
+	},
+	theaterMode: function(req, res){
+		var videoId = req.body.id;
+		var id = realId(videoId);
+		Video.findOne({_id: id}, function(err, result){
+			console.log(result);
+			res.send(result);
+		});
 	}
 };
 

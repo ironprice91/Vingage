@@ -35,7 +35,7 @@ $(function(){
 	$('body').append(videoView.el);
 
 	// 
-	
+
 	// Make a new note on video
 	$(document).on('click', '.toggle-new-note', function(e){
 		var videoContainer = $(this).closest('li');
@@ -103,5 +103,30 @@ $(function(){
 
 		thisVideo.currentTime = Number(setTime);	
 	});
+
+	// Toggle theater mode
+	$(document).on('click', '.theater-mode', function(){
+		var container = $(this).closest('li');
+		console.log('YO!', container);
+		var modal = $('#theater-mode');
+		var videoId = container.attr('data-video-container');
+		var requestVideo = '/theaterMode/' + videoId;
+
+		$.get(requestVideo, {}, function(responseData){
+			console.log(responseData);
+			$('.uploaded-video').setAttribute('data-video', videoId);
+			modal.modal('show');
+		});
+
+	});
+
+
+
+
+
+
+
+
+
 
 });

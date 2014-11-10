@@ -53,6 +53,7 @@ app.get('/view/:id', indexController.focusVideo);
 app.post('/newVideo', multer(), indexController.newVideo);
 app.post('/deleteVideo', videoController.deleteVideo);
 app.post('/saveNote', videoController.addNote);
+app.post('/theaterMode', videoController.theaterMode);
 
 
 var port = process.env.PORT || 6503;

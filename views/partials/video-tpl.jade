@@ -12,6 +12,7 @@ script#video-tpl(type="text/x-handlebars-template").
 				<button class="toggle-new-note btn btn-default" data-key="{{_id}}">Add Note</button>
 				<a href="/view/{{_id}}" class="btn btn-default focus-video">View</a>
 				<button class="btn btn-default deleteVideo">Delete</button>
+				<button class="btn btn-default theater-mode"data-toggle="modal" data-target="#theater-mode">Theater</button>
 				<a class="btn btn-default download" href="{{videoSrc}}">Download</a>
 				<section class="list-library">
 					<table class="list-notes table table-hover" data-note-container="{{_id}}" id="{{videoSrc}}">
