@@ -13,11 +13,11 @@ html(lang='en')
 		nav.navbar.navbar-inverse.main-nav
 			div.container
 				ul.nav.navbar-nav
-					a.navbar-brand.nav-logo Vingage
+					a.navbar-brand.nav-logo VINGAGE
 				div.navbar-form
-					button.btn.btn-default(data-toggle="modal" data-target="#uploadModal") Upload Video
-					a.btn.btn-default(href="/") QuickView
-					a.btn.btn-default(href="#") Library
+					button.btn.btn-default.btn-nav(data-toggle="modal" data-target="#uploadModal") Upload Video
+					a.btn.btn-default.btn-nav(href="/") QuickView
+					a.btn.btn-default.btn-nav(href="#") Library
 					a.btn.btn-default.pull-right.logout.navbar-right(href="/auth/logout") Logout
 
 		section.container
@@ -27,6 +27,8 @@ html(lang='en')
 			//- Handlebars template
 			include partials/video-tpl
 			include partials/video-list-tpl
+
+		//- footer.navbar.navbar-inverse
 	
 	//- external scripts
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js") 
@@ -35,9 +37,6 @@ html(lang='en')
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js") 
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js") 
 	script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js")
-	script(src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/3.8.4/dropzone.min.js") 
-	
-
 
 	//- backbone scripts
 	script(src="/scripts/lib/models/video-model.js")

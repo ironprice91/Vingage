@@ -3,13 +3,18 @@ extends layout
 block content
 	//- Upload template
 	.modal.fade(id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
-		.modal-dialog
+		.modal-dialog.upload-modal
 			.modal-content
+				.modal-header
+					h3.modal-title Video Upload					
 				.modal-body.upload-video
-					form.dropzone.dz-clickable.custom-drop(method="post", action="/newVideo", enctype="multipart/form-data" name="image")
-						input(type="text" name="video-title" placeholder="Title")
-						input(type="file", name="video")
-						input(type="submit")
+					form.custom-drop(method="post", action="/newVideo", enctype="multipart/form-data" name="image")
+						h4 Title: 
+							input(type="text" name="videoTitle")
+						h4 Video: 
+							input(type="file", name="video")
+						hr
+						input(type="submit" class="btn btn-default pull-right")
 
 	//- Theater mode template
 	.modal.fade(id="theater-mode" tabindex="-1" role="dialog" aria-labelledby="theaterMode" aria-hidden="true")

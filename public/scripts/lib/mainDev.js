@@ -42,7 +42,8 @@ $(function(){
 	$('body').append(videoView.el);
 
 	// toggle popover
-	$(document).on('click', '.note-row', function(){
+	$(document).on('click', '.note-row', function(e){
+		e.stopPropagation();
 		$('.note-row').popover({
 			animation: true,
 			content: notePopover,
@@ -52,14 +53,16 @@ $(function(){
 
 	// Delete note
 	$(document).on('click', '.delete-note', function(){
+		var videoContainer = $(this).closest('li');
+		var video = videoContainer.find('video');
+		var videoID = video.attr('id');
+
 		var noteContainer = $(this).parent();
 		var noteID = noteContainer.parent().prev().attr('id'); 
-		console.log(noteID);
-		$('#'+noteID).remove();
 
-		$.post('/deleteNote', {id: noteID}, function(responseData){
-			console.log('test1', responseData.err);
-			if(responseData.err === null){
+		$.post('/deleteNote', {id: noteID, videoId: videoID}, function(responseData){
+			console.log('responseData.success: ', responseData.success);
+			if(responseData.success === true){
 				$('#'+noteID).remove();
 				$('.popover').remove();
 			}
@@ -90,6 +93,7 @@ $(function(){
 		// Submiting a new note
 		$(document).on('submit', '#submit-note', function(e){
 			e.preventDefault();
+			e.stopPropagation();
 			var noteValue = $(this).find('textarea').val();
 			var thisTable = $(this).closest('table');
 			var thisNoteTime = thisVideo.currentTime;
@@ -101,7 +105,7 @@ $(function(){
 				console.log(responseData);
 			});						
 			
-			thisTable.append('<tr class="note-row"><td>'+noteValue+' <a class="set-time" data-set-time="'+thisNoteTime+'">'+timeDisplay+'</a></td></tr>')
+			thisTable.append('<tr class="note-row"><td><button class="set-time btn btn-default" data-set-time="'+thisNoteTime+'">'+timeDisplay + '</button>' +  noteValue+'</td></tr>')
 
 			this.remove();
 			thisVideo.play();
@@ -125,8 +129,8 @@ $(function(){
 	});
 
 	// Set time on video
-	$(document).on('click','.set-time', function(){
-		console.log('test');
+	$(document).on('click','.set-time', function(e){
+		e.stopPropagation();
 		var videoContainer = $(this).closest('li');
 		var video = videoContainer.find('video');
 		var videoId = video.attr('id');

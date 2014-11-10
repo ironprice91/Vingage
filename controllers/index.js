@@ -69,9 +69,9 @@ var indexController = {
 
     // Database for holding the AWS url to file 
     // Might have to do /public in your hard string url
-      // console.log('name: ', fName);
+      console.log('HEY MICHAEL: ', req.body.videoTitle);
       var newVideo = new Video({
-      title: 'title',
+      title: req.body.videoTitle,
       videoSrc: 'https://s3.amazonaws.com/refactoru/public/' + fName
       });
       newVideo.save(function(err, result){

@@ -39,12 +39,13 @@ var videoController = {
 		});
 	},
 	deleteNote: function(req,res){
-		var videoId = req.body.id;
-		var id = realId(videoId);
-		console.log('HEY!', Video);
+		var noteID = req.body.id;
+		var id = realId(noteID);
+		var video = req.body.videoId;
+		var realVideoID = realId(video);
 
-		Video.update({}, {$pull: {"notes" : {_id:id}}}, function(err, result){
-			console.log(id);
+		Video.update({_id: realVideoID}, {$pull: {"notes" : {_id:id}}}, function(err, result){
+			console.log(realVideoID);
 			res.send({
 				err: err,
 				result: result,

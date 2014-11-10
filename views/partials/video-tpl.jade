@@ -16,7 +16,7 @@ script#video-tpl(type="text/x-handlebars-template").
 				<section class="list-library">
 					<table class="list-notes table table-hover" data-note-container="{{_id}}" id="{{videoSrc}}">
 						{{#each notes}}
-						<tr class="note-row" data-note="{{_id}}" id="{{_id}}"><td>{{note}} <a class="set-time" data-set-time="{{time}}">{{displayTime}}</a></td></tr>
+						<tr class="note-row" data-note="{{_id}}" id="{{_id}}"><td><button class="set-time btn btn-default" data-set-time="{{time}}">{{displayTime}}</button> <p>{{note}}</p> </td></tr>
 						{{/each}}
 					</table>
 				</section>
