@@ -157,9 +157,6 @@ background-color: rgba(255, 255, 255, 0.59);
 color: black;
 }
 
-/*Edit note*/
-
-
 /*Focus view*/
 .command-center {
 margin-top: 15px;
@@ -170,4 +167,8 @@ margin-top: 15px;
 padding-left: 53px;
 }
 
-
+/*Theater mode*/
+.modal.in .modal-dialog.theater-mode  {
+right: 34%;
+margin-top: 0%;
+}

@@ -18,10 +18,10 @@ block content
 
 	//- Theater mode template
 	.modal.fade(id="theater-mode" tabindex="-1" role="dialog" aria-labelledby="theaterMode" aria-hidden="true")
-		.modal-dialog
+		.modal-dialog.theater-mode
 			.modal-content
 				li.video-container(data-video-container="#{_id}")
-						video.video-js.vjs-default-skin.uploaded-video.vjs-big-play-centered(controls width="1080" height="600" id="#{_id}" data-video="#{_id}" data-setup='{}')
+						video.video-js.vjs-default-skin.uploaded-video.vjs-big-play-centered(controls width="1900" height="800" id="#{_id}" data-video="#{_id}" data-setup='{}')
 							source(src="#{videos[0].videoSrc}" type="video/mp4")
 							source(src="#{videoSrc}" type="video/webm")
 						section.video-control-center.command-center
