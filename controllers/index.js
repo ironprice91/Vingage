@@ -31,7 +31,6 @@ var indexController = {
         user: req.user,
         videos: videos
       });
-      console.log('HEY!!!', videos[0].title);
     });
   },
 

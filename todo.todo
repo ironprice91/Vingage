@@ -20,14 +20,14 @@ Backlog:
  ☐ Upload by drag and drop <<
 
  ToDo:
- ☐ Edit notes <<<<<<
+ ☐ Theater mode
  ☐ Get notes to work in focus view <<<<<
  ☐ Sort notes by time <<<<
  ☐ Make library menu <<<<
- ☐ Theater mode
  ☐ Highlight note when the time get scrubbed over < (TRY table hover when time scrub)
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Edit notes <<<<<< @done (14-11-11 14:43) @project(Backlog)
  ✔ AJAX rendering <<<<<<<<< @done (14-11-11 10:38) @project(Backlog)
  ✔ toggle time <<<<<<< @done (14-11-10 13:29) @project(Backlog)
  ✔ Delete note <<< @done (14-11-10 12:34) @project(Backlog)

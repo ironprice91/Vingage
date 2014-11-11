@@ -184,6 +184,10 @@ padding-left: 53px;
 
 /*Theater mode*/
 .modal.in .modal-dialog.theater-mode  {
-right: 34%;
+right: 0%;
 margin-top: 0%;
+}
+
+.video-modal {
+right:109%;
 }

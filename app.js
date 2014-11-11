@@ -54,13 +54,13 @@ app.get('/', indexController.index);
 app.get('/view', indexController.view);
 app.get('/view/:id', indexController.focusVideo);
 app.get('/getNote/:id', videoController.getNote);
+app.get('/theaterMode/:id', videoController.theaterMode);
 
 app.post('/newVideo', multer(), indexController.newVideo);
 app.post('/deleteVideo', videoController.deleteVideo);
 app.post('/saveNote', videoController.addNote);
 app.post('/updateNote/:id', videoController.updateNote);
 app.post('/deleteNote', videoController.deleteNote);
-app.post('/theaterMode', videoController.theaterMode);
 
 
 var port = process.env.PORT || 6503;

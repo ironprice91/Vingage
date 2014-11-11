@@ -85,9 +85,8 @@ var videoController = {
 		});
 	},
 	theaterMode: function(req, res){
-		var videoId = req.body.id;
-		var id = realId(videoId);
-		Video.findOne({_id: id}, function(err, result){
+		var videoId = req.params.id;
+		Video.find({_id: videoId}, function(err, result){
 			console.log(result);
 			res.send(result);
 		});

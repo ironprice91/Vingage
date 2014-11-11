@@ -198,14 +198,21 @@ $(function(){
 	// Toggle theater mode
 	$(document).on('click', '.theater-mode', function(){
 		var container = $(this).closest('li');
-		console.log('YO!', container);
 		var modal = $('#theater-mode');
 		var videoId = container.attr('data-video-container');
 		var requestVideo = '/theaterMode/' + videoId;
-
+		console.log(videoId);
 		$.get(requestVideo, {}, function(responseData){
-			console.log(responseData);
-			$('.uploaded-video').setAttribute('data-video', videoId);
+			var video = $('.video-modal').find('video');
+			$('.video-theater').attr('src', responseData[0].videoSrc);
+			$('.video-modal').attr('src', responseData[0].videoSrc);
+			$('.theater-container').attr('data-video-container', videoId);
+			$('.video-modal').attr('id', videoId);
+			$('.video-modal').attr('data-video', videoId);
+			video.attr('src', responseData[0].videoSrc);
+			video.attr('id', responseData[0]._id+'_html5_api');
+			video.attr('data-video', responseData[0]._id);
+
 			modal.modal('show');
 		});
 
