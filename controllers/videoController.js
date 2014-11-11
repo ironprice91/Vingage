@@ -60,6 +60,15 @@ var videoController = {
 			res.send(result.notes[0].note);
 		});
 	},
+	updateNote: function(req,res){
+		var noteData = req.body;
+		Video.findById(noteData.id, function(err, result){
+			result.note = noteData.note;
+			result.save(function(err, result){
+				res.send(result);
+			});
+		});
+	},
 	theaterMode: function(req, res){
 		var videoId = req.body.id;
 		var id = realId(videoId);

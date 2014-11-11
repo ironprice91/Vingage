@@ -40,7 +40,6 @@ border-radius: 10px;
 background: rgba(255, 255, 255, 0.29);
 overflow: hidden;
 color: white;
-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .splash-logo{
@@ -51,7 +50,6 @@ right: 0;
 color: #79BD0F;
 font-family: 'Montserrat', sans-serif;
 font-size: 50px;
-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 letter-spacing: 10px;
 }
 

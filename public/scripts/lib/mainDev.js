@@ -69,22 +69,39 @@ $(function(){
 		});
 	});
 
-	// Edit note
+	// Toggle Edit note
 	$(document).on('click', '.edit-note', function(e){
 		e.preventDefault();
 		var container = $(this).closest('li');
 		var videoId = container.attr('data-video-container');
 		var noteContainer = $(this).parent();
-		var editTextarea = '<textarea id="edit-note-form" name="editNoteForm"></textarea>';
+		var editTextarea = '<form id="edit-note"><textarea id="edit-note-form" name="editNoteForm" cols="37" rows="8"></textarea><input type="submit" class="btn btn-default"></form>';
 		$(noteContainer).append(editTextarea);
 		var requestNote = '/getNote/' + videoId;
 		var textareaEditor = $('#edit-note-form');
 
 		$.get(requestNote, {}, function(responseData){
-			console.log('LINE 83 respData: ', responseData);
 			textareaEditor.val(responseData);
+		});
+	});
+
+	// Submit new value for note
+	$(document).on('submit', '#edit-note', function(e){
+		e.preventDefault();
+		var textareaEditor = $('#edit-note');
+
+		var editedNote = textareaEditor.find('[name=editNoteForm]').val();
+
+		var requestNewNote = {
+			note: editedNote
+		};
+
+		$.post('/updateNote', requestNewNote, function(responseData){
+			console.log(responseData);
 
 		});
+
+		console.log(editedNote);
 	});
 
 	// Make a new note on video

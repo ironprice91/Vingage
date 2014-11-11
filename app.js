@@ -53,12 +53,13 @@ app.use(passsportConfig.ensureAuthenticated);
 app.get('/', indexController.index);
 app.get('/view', indexController.view);
 app.get('/view/:id', indexController.focusVideo);
+app.get('/getNote/:id', videoController.getNote);
 
 app.post('/newVideo', multer(), indexController.newVideo);
 app.post('/deleteVideo', videoController.deleteVideo);
 app.post('/saveNote', videoController.addNote);
+app.post('/updateNote', videoController.updateNote);
 app.post('/deleteNote', videoController.deleteNote);
-app.get('/getNote/:id', videoController.getNote);
 app.post('/theaterMode', videoController.theaterMode);
 
 
