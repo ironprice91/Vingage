@@ -117,9 +117,8 @@ $(function(){
 			};
 
 			$.post(updateNote, requestNewNote, function(responseData){
-				console.log(responseData.note);
-				renderNote(responseData.note);
-
+				var noteText = noteContainer.parent().prev().find('p').text(responseData.note);
+				$('.popover').remove();
 			});
 
 		});
