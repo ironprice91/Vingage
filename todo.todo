@@ -4,13 +4,14 @@ Key:
  Reminders:
  ☐ When production link to main  js/css
 Backlog: 
- ☐ mouseover on upload
- ☐ Api logins -
+ ☐ mouseover on upload --
+ ☐ Implement dropzone
+ ☐ API logins -
+ ☐ Using Youtube API
  ☐ Interactive chat with sockets -
  ☐ Delete user profile 
  ☐ Add ability to stream - 
  ☐ Push to heroku
- ☐ Implement dropzone
  ☐ set up heroku db
  ☐ Search videos
  ☐ Implement Sass (gulp sass/use libsass)

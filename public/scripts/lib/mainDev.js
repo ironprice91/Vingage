@@ -67,7 +67,24 @@ $(function(){
 				$('.popover').remove();
 			}
 		});
+	});
 
+	// Edit note
+	$(document).on('click', '.edit-note', function(e){
+		e.preventDefault();
+		var container = $(this).closest('li');
+		var videoId = container.attr('data-video-container');
+		var noteContainer = $(this).parent();
+		var editTextarea = '<textarea id="edit-note-form" name="editNoteForm"></textarea>';
+		$(noteContainer).append(editTextarea);
+		var requestNote = '/getNote/' + videoId;
+		var textareaEditor = $('#edit-note-form');
+
+		$.get(requestNote, {}, function(responseData){
+			console.log('LINE 83 respData: ', responseData);
+			textareaEditor.val(responseData);
+
+		});
 	});
 
 	// Make a new note on video

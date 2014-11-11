@@ -53,6 +53,13 @@ var videoController = {
 			});
 		});
 	},
+	getNote: function(req,res){
+		var id = req.params.id;
+		Video.findOne({_id:id}, function(err, result){
+			// console.log(result.notes[0].note);
+			res.send(result.notes[0].note);
+		});
+	},
 	theaterMode: function(req, res){
 		var videoId = req.body.id;
 		var id = realId(videoId);
