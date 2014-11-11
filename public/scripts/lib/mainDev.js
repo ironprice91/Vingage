@@ -87,15 +87,22 @@ $(function(){
 	// Toggle Edit note
 	$(document).on('click', '.edit-note', function(e){
 		e.preventDefault();
-		var container = $(this).closest('li');
-		var videoId = container.attr('data-video-container');
+		var videoContainer = $(this).closest('li');
+		var video = videoContainer.find('video');
+		var videoId = video.attr('id');
+
 		var noteContainer = $(this).parent();
+		var noteID = noteContainer.parent().prev().attr('id');//
+
 		var editTextarea = '<form id="edit-note"><textarea id="edit-note-form" name="editNoteForm" cols="37" rows="8"></textarea><input type="submit" class="btn btn-default"></form>';
+
 		$(noteContainer).append(editTextarea);
-		var requestNote = '/getNote/' + videoId;
+		var requestNote = '/getNote/' + videoId +'-'+noteID;
+		console.log(requestNote);
+
 		var textareaEditor = $('#edit-note-form');
 
-		$.get(requestNote, {}, function(responseData){
+		$.get(requestNote, function(responseData){
 			textareaEditor.val(responseData);
 		});
 	});
@@ -113,6 +120,9 @@ $(function(){
 
 		$.post('/updateNote', requestNewNote, function(responseData){
 			console.log(responseData);
+			var updatedNote = renderNote(responseData);
+
+
 
 		});
 
@@ -147,20 +157,11 @@ $(function(){
 			var thisTable = $(this).closest('table');
 			var thisNoteTime = thisVideo.currentTime;
 			var timeDisplay = timeConvert(thisNoteTime);
-			console.log(thisNoteTime);
-			console.log(noteValue);
-
 
 			$.post('/saveNote', {id:videoId, note:noteValue, time:thisNoteTime, displayTime:timeDisplay}, function(responseData){
-				console.log(responseData);
 				var noteEl = renderNote(responseData);
-				console.log('noteEl: ', noteEl);
-				console.log('thisTable: ', thisTable);
 				thisTable.append(noteEl);
 			});
-			
-			
-			// thisTable.append('<tr class="note-row"><td><button class="set-time btn btn-default" data-set-time="'+thisNoteTime+'">'+timeDisplay + '</button><p>' +  noteValue+'</p></td></tr>')
 
 			this.remove();
 			thisVideo.play();

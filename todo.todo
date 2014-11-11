@@ -20,7 +20,6 @@ Backlog:
  ☐ Upload by drag and drop <<
 
  ToDo:
- ☐ AJAX rendering
  ☐ Edit notes <<<<<<
  ☐ Get notes to work in focus view <<<<<
  ☐ Sort notes by time <<<<
@@ -29,6 +28,7 @@ Backlog:
  ☐ Highlight note when the time get scrubbed over < (TRY table hover when time scrub)
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ AJAX rendering <<<<<<<<< @done (14-11-11 10:38) @project(Backlog)
  ✔ toggle time <<<<<<< @done (14-11-10 13:29) @project(Backlog)
  ✔ Delete note <<< @done (14-11-10 12:34) @project(Backlog)
  ✔ Ajax note <<<<< @done (14-11-09 10:25) @project(Backlog)

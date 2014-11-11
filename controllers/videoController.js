@@ -5,6 +5,10 @@ var realId = function(string){
 	return string.replace(/_html5_api/,'');
 };
 
+var idSplitter = function(string){
+	return string.split(/_html5_api-/);
+}
+
 var videoController = {
 	deleteVideo: function(req,res){
 		var videoId = req.body.id;
@@ -46,6 +50,7 @@ var videoController = {
 
 		Video.update({_id: realVideoID}, {$pull: {"notes" : {_id:id}}}, function(err, result){
 			console.log(realVideoID);
+			console.log('TEST!', result);
 			res.send({
 				err: err,
 				result: result,
@@ -55,9 +60,11 @@ var videoController = {
 	},
 	getNote: function(req,res){
 		var id = req.params.id;
-		Video.findOne({_id:id}, function(err, result){
-			// console.log(result.notes[0].note);
-			res.send(result.notes[0].note);
+		var videoId = idSplitter(id)[0];
+		var noteId = idSplitter(id)[1];
+		Video.find({_id:videoId}, function(err, doc){
+			var note = doc[0].notes.id(noteId);
+			res.send(note.note);
 		});
 	},
 	updateNote: function(req,res){
