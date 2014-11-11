@@ -36,6 +36,11 @@ var timeConvert = function(num){
 
 $(function(){
 	$('#username-input').focus();
+	
+	$(document).ready(function(){
+		$('.splash-logo').removeClass('hidden');
+		$('.splash-logo').fadeIn(3000);
+	});
 
 	// render all videos and append
 	videoView.render();
@@ -139,7 +144,7 @@ $(function(){
 				console.log(responseData);
 			});						
 			
-			thisTable.append('<tr class="note-row"><td><button class="set-time btn btn-default" data-set-time="'+thisNoteTime+'">'+timeDisplay + '</button>' +  noteValue+'</td></tr>')
+			thisTable.append('<tr class="note-row"><td><button class="set-time btn btn-default" data-set-time="'+thisNoteTime+'">'+timeDisplay + '</button><p>' +  noteValue+'</p></td></tr>')
 
 			this.remove();
 			thisVideo.play();
@@ -153,13 +158,16 @@ $(function(){
 	$(document).on('click', '.deleteVideo', function(){
 		var videoContainer = $(this).closest('li');
 		var videoId = videoContainer.attr('data-video-container');
+		var deleteVideo = confirm('Are you sure you want to delete this video?');
 
-		$.post('/deleteVideo', {id: videoId}, function(responseData){
-			console.log('responseData: ', responseData);
-			if(responseData.success === true){
-				videoContainer.remove();
-			}
-		});
+		if(deleteVideo === true){
+			$.post('/deleteVideo', {id: videoId}, function(responseData){
+				console.log('responseData: ', responseData);
+					if(responseData.success === true){
+						videoContainer.remove();
+					}
+			});
+		}
 	});
 
 	// Set time on video

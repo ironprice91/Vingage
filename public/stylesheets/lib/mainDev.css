@@ -27,14 +27,13 @@ height: auto;
 .sign-in-form {
 position: absolute;
 top: 0px;
-bottom: 0;
-left: 0;
+bottom: 0%;
+left: 50%;
 right: 0;
 margin: auto;
-margin-top: 10%;
-height: 50%;
 width: 25%;
-font-size: 15px;
+height: 50%;
+font-size: 18px;
 border: 1px solid transparent;
 border-radius: 10px;
 background: rgba(255, 255, 255, 0.29);
@@ -44,15 +43,16 @@ color: white;
 
 .splash-logo{
 top: 0;
-bottom: 0;
-left: 0;
-right: 0;
 color: #79BD0F;
 font-family: 'Montserrat', sans-serif;
-font-size: 50px;
+font-size: 12.9rem;
 letter-spacing: 10px;
 }
 
+/*.splash-logo {	
+display: none;
+}
+*/
 .sign-in, .sign-up {
 display: table-caption;
 }
@@ -74,6 +74,19 @@ background-color: rgba(121, 189, 15, 0.59);
 
 input.login-forms {
 color: black;
+}
+
+
+.splash-description {
+position: absolute;
+top: 0%;
+bottom: 6%;
+right: 50%;
+margin: auto;
+width: 38%;
+height: 50%;
+font-size: 18px;
+color: white;
 }
 
 /*navbar*/
