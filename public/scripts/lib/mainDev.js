@@ -23,7 +23,6 @@ var renderNote = function(noteData){
 	el.attr('data-note', noteData._id);
 	el.attr('id', noteData._id);
 	el.attr('class', 'note-row');
-	console.log(noteData._id);
 	el.append('<td><button class="set-time btn btn-default" data-set-time="'+noteData.time+'">'+noteData.displayTime+'</button><p>'+noteData.note+'</p></td>');
 
 	return el;
@@ -92,42 +91,40 @@ $(function(){
 		var videoId = video.attr('id');
 
 		var noteContainer = $(this).parent();
-		var noteID = noteContainer.parent().prev().attr('id');//
+		var noteID = noteContainer.parent().prev().attr('id');
 
 		var editTextarea = '<form id="edit-note"><textarea id="edit-note-form" name="editNoteForm" cols="37" rows="8"></textarea><input type="submit" class="btn btn-default"></form>';
 
 		$(noteContainer).append(editTextarea);
 		var requestNote = '/getNote/' + videoId +'-'+noteID;
-		console.log(requestNote);
-
 		var textareaEditor = $('#edit-note-form');
 
 		$.get(requestNote, function(responseData){
 			textareaEditor.val(responseData);
 		});
-	});
 
-	// Submit new value for note
-	$(document).on('submit', '#edit-note', function(e){
-		e.preventDefault();
-		var textareaEditor = $('#edit-note');
+		// Submit new value for note
+		$(document).on('submit', '#edit-note', function(e){
+			e.preventDefault();
+			var updateNote = 'updateNote/' + videoId + '-' + noteID;
+			var textareaEditor = $('#edit-note');
 
-		var editedNote = textareaEditor.find('[name=editNoteForm]').val();
+			var editedNote = textareaEditor.find('[name=editNoteForm]').val();
 
-		var requestNewNote = {
-			note: editedNote
-		};
+			// Pass the value of new note to the server
+			var requestNewNote = {
+				note: editedNote
+			};
 
-		$.post('/updateNote', requestNewNote, function(responseData){
-			console.log(responseData);
-			var updatedNote = renderNote(responseData);
+			$.post(updateNote, requestNewNote, function(responseData){
+				console.log(responseData.note);
+				renderNote(responseData.note);
 
-
+			});
 
 		});
-
-		console.log(editedNote);
 	});
+
 
 	// Make a new note on video
 	$(document).on('click', '.toggle-new-note', function(e){

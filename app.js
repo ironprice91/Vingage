@@ -58,7 +58,7 @@ app.get('/getNote/:id', videoController.getNote);
 app.post('/newVideo', multer(), indexController.newVideo);
 app.post('/deleteVideo', videoController.deleteVideo);
 app.post('/saveNote', videoController.addNote);
-app.post('/updateNote', videoController.updateNote);
+app.post('/updateNote/:id', videoController.updateNote);
 app.post('/deleteNote', videoController.deleteNote);
 app.post('/theaterMode', videoController.theaterMode);
 

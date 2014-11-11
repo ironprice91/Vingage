@@ -64,16 +64,24 @@ var videoController = {
 		var noteId = idSplitter(id)[1];
 		Video.find({_id:videoId}, function(err, doc){
 			var note = doc[0].notes.id(noteId);
+			console.log(note);
 			res.send(note.note);
 		});
 	},
 	updateNote: function(req,res){
-		var noteData = req.body;
-		Video.findById(noteData.id, function(err, result){
-			result.note = noteData.note;
-			result.save(function(err, result){
-				res.send(result);
-			});
+		var noteData = req.params.id;
+		var newNote = req.body.note;
+		var videoId = idSplitter(noteData)[0];
+		var noteId = idSplitter(noteData)[1];
+
+		console.log('edited note value', noteData);
+		Video.update({_id:videoId, "notes._id":noteId}, {$set: {"notes.$.note":newNote}}, function(err, result,  status){
+				res.send({
+					err: err,
+					result:result,
+					success: err === null,
+					note: newNote
+				});
 		});
 	},
 	theaterMode: function(req, res){
