@@ -54,6 +54,7 @@ app.get('/', indexController.index);
 app.get('/view', indexController.view);
 app.get('/view/:id', indexController.focusVideo);
 app.get('/getNote/:id', videoController.getNote);
+// app.get('/noteValue/:id', videoController.noteValue);
 
 app.post('/newVideo', multer(), indexController.newVideo);
 app.post('/deleteVideo', videoController.deleteVideo);

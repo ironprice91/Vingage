@@ -39,6 +39,11 @@ border-radius: 10px;
 background: rgba(255, 255, 255, 0.29);
 overflow: hidden;
 color: white;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.inner-form {
+padding: 29px;
 }
 
 .splash-logo{
@@ -47,12 +52,9 @@ color: #79BD0F;
 font-family: 'Montserrat', sans-serif;
 font-size: 12.9rem;
 letter-spacing: 10px;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-/*.splash-logo {	
-display: none;
-}
-*/
 .sign-in, .sign-up {
 display: table-caption;
 }

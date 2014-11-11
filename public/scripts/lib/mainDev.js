@@ -17,7 +17,17 @@ var notePopover = '<button class="btn btn-success popover-btn edit-note">Edit  <
     '<button class="btn btn-danger popover-btn delete-note">Delete</button>'+
     '<button id="close-popover" data-toggle="clickover" class="btn btn-small btn-primary popover-btn" onclick="$(&quot;.note-row&quot;).popover(&quot;hide&quot;);">Close</button>';
 
+// Render Note
+var renderNote = function(noteData){
+	var el = $('<tr>')
+	el.attr('data-note', noteData._id);
+	el.attr('id', noteData._id);
+	el.attr('class', 'note-row');
+	console.log(noteData._id);
+	el.append('<td><button class="set-time btn btn-default" data-set-time="'+noteData.time+'">'+noteData.displayTime+'</button><p>'+noteData.note+'</p></td>');
 
+	return el;
+};
 
 // Display time (refactor to use % modulus)
 var timeConvert = function(num){
@@ -140,11 +150,17 @@ $(function(){
 			console.log(thisNoteTime);
 			console.log(noteValue);
 
+
 			$.post('/saveNote', {id:videoId, note:noteValue, time:thisNoteTime, displayTime:timeDisplay}, function(responseData){
 				console.log(responseData);
-			});						
+				var noteEl = renderNote(responseData);
+				console.log('noteEl: ', noteEl);
+				console.log('thisTable: ', thisTable);
+				thisTable.append(noteEl);
+			});
 			
-			thisTable.append('<tr class="note-row"><td><button class="set-time btn btn-default" data-set-time="'+thisNoteTime+'">'+timeDisplay + '</button><p>' +  noteValue+'</p></td></tr>')
+			
+			// thisTable.append('<tr class="note-row"><td><button class="set-time btn btn-default" data-set-time="'+thisNoteTime+'">'+timeDisplay + '</button><p>' +  noteValue+'</p></td></tr>')
 
 			this.remove();
 			thisVideo.play();

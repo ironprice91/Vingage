@@ -34,7 +34,7 @@ var videoController = {
 				if(err){
 					console.log(err);	
 				} else {
-					console.log(result);	
+					res.send(result.notes[result.notes.length-1]);	
 				}	
 		});
 	},

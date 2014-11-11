@@ -12,15 +12,15 @@ block content
 		section.splash-description.col-md-6
 			h1 VINGAGE is a cool video web application that is cool
 		div.sign-in-form.col-md-6
-			div.col-md-offset-1
-				h3 Sign in
+			div.inner-form
+				h2 Sign in
 				form.sign-in(action="/auth/login" method="post")
 					input#username-input.login-forms(type="text" name="username" placeholder="Username")
 					input.login-forms(type="password" name="password" placeholder="Password")
 					button.btn.btn-splash(type="submit") Login
 
 				//- Sign up
-				h3 Sign up
+				h2 Sign up
 				form.sign-up(action="/auth/signup" method="post")
 					input.login-forms(type="text" name="username" placeholder="Username")
 					input.login-forms(type="email" name="email" placeholder="Email")
