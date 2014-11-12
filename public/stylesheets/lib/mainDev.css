@@ -26,8 +26,8 @@ height: auto;
 
 .sign-in-form {
 position: absolute;
-top: 0px;
-bottom: 0%;
+top: 130px;
+bottom: 0px;
 left: 50%;
 right: 0;
 margin: auto;
@@ -211,9 +211,18 @@ right: 69%;
   height: 50px; 
 }
 .site-footer {
-  background: #252525;
+background: #252525;
 }
 
+.footer-content {
+margin: 15px 0;
+color: white;
+}
+
+.logo-footer {
+color: #79BD0F;
+font-family: 'Montserrat', sans-serif;
+}
 /*Video row*/
 .video-note-container {
 padding-bottom: 50px;
