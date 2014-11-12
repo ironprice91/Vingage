@@ -3,7 +3,7 @@ script#video-tpl(type="text/x-handlebars-template").
 	<ul class="container video-note-container">
 		<li class="video-container" data-video-container="{{_id}}">
 			<h2><a href="/view/{{_id}}" class="focus-video">{{title}}</a></h2>
-			<video class="col-md-8 video-js vjs-default-skin uploaded-video vjs-big-play-centered" id="{{_id}}" controls data-setup='{}' data-video="{{_id}}" width="650" height="407" >
+			<video class="col-md-8 video-js vjs-default-skin uploaded-video vjs-big-play-centered videoClassId" id="{{_id}}" controls data-setup='{}' data-video="{{_id}}" width="650" height="407" >
 				<source src="{{videoSrc}}" type="video/mp4">
 				<source src="{{videoSrc}}" type="video/webm">
 				<p class="vjs-no-js"> To view this video please enable Javascript || consider upgrading to a web browser that supports HTML5 video</p>
