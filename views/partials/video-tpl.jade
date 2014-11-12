@@ -1,6 +1,6 @@
 //- template view for a single video
 script#video-tpl(type="text/x-handlebars-template").
-	<ul class="container">
+	<ul class="container video-note-container">
 		<li class="video-container" data-video-container="{{_id}}">
 			<h3><a href="/view/{{_id}}" class="focus-video">{{title}}</a></h3>
 			<video class="col-md-8 video-js vjs-default-skin uploaded-video vjs-big-play-centered" id="{{_id}}" controls data-setup='{}' data-video="{{_id}}" width="650" height="400" >
