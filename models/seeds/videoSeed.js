@@ -1,12 +1,12 @@
 // Uncomment to have a seed db entry
-/*var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var Video = require('../video.js');
 
 Video.find({}, function(err, results){
 	if(results.length === 0){
 		var videoGuy = new Video({
-			title: 'Bunny',
-			videoSrc: 'https://s3.amazonaws.com/refactoru/public/bunny.mp4',
+			title: 'BackboneJS',
+			videoSrc: 'https://s3.amazonaws.com/refactoru/public/Backbonejs+Tutorial+-+Beginners.mp4',
 			notes: [{
 				time: 6,
 				displayTime: "0:06",
@@ -15,4 +15,4 @@ Video.find({}, function(err, results){
 		});
 	videoGuy.save();
 	}	
-});*/
+});
