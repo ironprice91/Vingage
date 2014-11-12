@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+// Uncomment to have a seed db entry
+/*var mongoose = require('mongoose');
 var Video = require('../video.js');
 
 Video.find({}, function(err, results){
@@ -14,4 +15,4 @@ Video.find({}, function(err, results){
 		});
 	videoGuy.save();
 	}	
-});
+});*/

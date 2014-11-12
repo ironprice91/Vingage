@@ -251,3 +251,7 @@ color: black;
 .note-row:hover {
 border: 2px solid #79BD0F;
 }
+
+.deleteVideo:hover {
+border: 1px solid red;
+}
