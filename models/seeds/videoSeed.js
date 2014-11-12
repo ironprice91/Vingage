@@ -8,6 +8,7 @@ Video.find({}, function(err, results){
 			title: 'Bunny',
 			notes: [{
 				time: 6,
+				displayTime: "0:06"
 				note: ['This is a note I want on the page']
 			}]
 		});
