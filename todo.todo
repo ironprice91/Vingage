@@ -2,6 +2,7 @@ Key:
 < priority
 - not priority
  Reminders:
+ ☐ Line 24 in login jade remove the path 'remove' <<<<<<<
  ☐ When production link to main  js/css
  ☐ Uncomment code that you didn't implement
  ☐ Switch the popovers to left
