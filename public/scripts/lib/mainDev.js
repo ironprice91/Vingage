@@ -171,16 +171,16 @@ $(function(){
 	$(document).on('click', '.deleteVideo', function(){
 		var videoContainer = $(this).closest('li');
 		var videoId = videoContainer.attr('data-video-container');
-		var deleteVideo = confirm('Are you sure you want to delete this video?');
+		// var deleteVideo = confirm('Are you sure you want to delete this video?');
 
-		if(deleteVideo === true){
+		// if(deleteVideo === true){
 			$.post('/deleteVideo', {id: videoId}, function(responseData){
 				console.log('responseData: ', responseData);
 					if(responseData.success === true){
 						videoContainer.remove();
 					}
 			});
-		}
+		// }
 	});
 
 	// Set time on video

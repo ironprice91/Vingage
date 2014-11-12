@@ -124,7 +124,7 @@ height: 20rem;
 }
 
 .list-library {
-height: 366px;
+height: 356px;
 overflow: scroll;
 padding-left: 1px;
 margin-top: 5px;
@@ -141,6 +141,7 @@ color: black;
 
 .video-container {
 display: block;
+width: 97.8%;
 }
 
 .vjs-default-skin { color: #fffefe; }
@@ -195,7 +196,7 @@ margin-top: 0%;
 }
 
 .video-modal {
-right:109%;
+right: 111.5%;
 }
 
 /*Footer*/
@@ -212,4 +213,20 @@ right:109%;
 /*Video row*/
 .video-note-container {
 padding-bottom: 50px;
+}
+
+.video-control-center {
+border: 1px solid black;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+.alt-video-controls {
+margin-top: 38%;
+}
+
+.toggle-new-note {
+width: 99%;
+margin-top: 10px;
+letter-spacing: 3px;
 }
