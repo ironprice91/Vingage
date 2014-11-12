@@ -225,8 +225,27 @@ border-bottom-right-radius: 5px;
 margin-top: 38%;
 }
 
-.toggle-new-note {
+.toggle-new-note, .toggle-new-note:hover {
 width: 99%;
 margin-top: 10px;
 letter-spacing: 3px;
+background-color: #79BD0F;
+border: 1px solid black;
+color: white;
+}
+
+.cancel-note {
+width: 50%;
+background: white;
+color: black;
+}
+
+.submit-note-btn {
+width: 50%;
+background: white;
+color: black;
+}
+
+.note-row:hover {
+border: 2px solid #79BD0F;
 }

@@ -10,7 +10,7 @@ var videoView = new VideoListView({
 });
 
 // New note template
-var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button class="cancel-note btn btn-danger">Cancel</button><button type="submit" class="btn btn-primary submit-note-btn">Save</button><form>';
+var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button class="cancel-note btn btn-danger">Cancel</button><button type="submit" class="btn btn-primary pull-right submit-note-btn">Save</button><form>';
 
 // Popover for editing notes
 var notePopover = '<button class="btn btn-success popover-btn edit-note">Edit  </button>'+
