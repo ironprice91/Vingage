@@ -19,7 +19,7 @@ var indexController = require('./controllers/index.js');
 var videoController = require('./controllers/videoController.js');
 
 // Connect to our database called: videoApp
-mongoose.connect('mongodb://localhost/vidup');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/vidup');
 require('./models/seeds/videoSeed.js');
 
 var app = express();
