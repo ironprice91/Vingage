@@ -252,6 +252,10 @@ background: white;
 color: black;
 }
 
+.deleteVideo:hover {
+border: 1px solid red;
+}
+
 .note-row:hover {
 border: 2px solid #79BD0F;
 }
