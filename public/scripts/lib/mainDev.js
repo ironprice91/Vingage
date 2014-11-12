@@ -61,6 +61,7 @@ $(function(){
 		$('.note-row').popover({
 			animation: true,
 			content: notePopover,
+			placement: 'left',
 			html: true
 		});
 	});
