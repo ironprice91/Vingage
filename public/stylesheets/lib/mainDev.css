@@ -51,7 +51,7 @@ top: 0;
 color: #79BD0F;
 font-family: 'Montserrat', sans-serif;
 font-size: 12.9rem;
-letter-spacing: 10px;
+letter-spacing: 11px;
 text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -86,9 +86,11 @@ bottom: 6%;
 right: 50%;
 margin: auto;
 width: 38%;
-height: 50%;
+height: 35%;
 font-size: 18px;
+letter-spacing: 1px;
 color: white;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 /*navbar*/
@@ -250,8 +252,4 @@ color: black;
 
 .note-row:hover {
 border: 2px solid #79BD0F;
-}
-
-.deleteVideo:hover {
-border: 1px solid red;
 }
