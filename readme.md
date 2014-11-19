@@ -4,7 +4,7 @@ ___
 Vingage was created for students to take notes during video lectures.
 Adding engagment and providing a better learning experience. 
 
-<a href="https://vingage.herokuapp.com" target="_blank">Vingage Demo</a>
+[Vingage Demo](https://vingage.herokuapp.com)
 If you want to demo vingage please use these credentials to log in:
 
 > *Username*: employer
