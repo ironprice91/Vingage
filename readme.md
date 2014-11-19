@@ -1,9 +1,23 @@
-<!-- Sources 
-	https://github.com/enyo/dropzone
-	https://github.com/videojs/video.js/
- -->
-
 ### Vingage
 ___
 
+Vingage was created for students to take notes during video lectures.
+Adding engagment and providing a better learning experience. 
 
+<a href="https://vingage.herokuapp.com" target="_blank">Vingage Demo</a>
+If you want to demo vingage please use these credentials to log in:
+
+> *Username*: employer
+> *Password*: saltedpass
+
+*Some functionality has been temporarily disabled*
+
+Listed below are the technologies used:
+
+- BackboneJS
+- NodeJS  
+- Jade  
+- Express  
+- Mongo  
+- Heroku  
+- AWS S3
