@@ -7,7 +7,7 @@ var realId = function(string){
 
 var idSplitter = function(string){
 	return string.split(/_html5_api-/);
-}
+};
 
 var videoController = {
 	deleteVideo: function(req,res){
