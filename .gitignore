@@ -1,2 +1,5 @@
 node_modules
 private.js
+.DS_Store
+.thumbs.db
+npm-debug.log

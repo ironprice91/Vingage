@@ -36,8 +36,8 @@ app.use(flash());
 // passport stuff
 app.use(session({secret: 'secret key'}));
 app.use(passport.initialize());
-app.use(passport.session());
 
+app.use(passport.session());
 app.get('/auth/login', authenticationController.login);
 app.post('/auth/login', authenticationController.processLogin);
 app.post('/auth/signup', authenticationController.processSignup);
@@ -49,6 +49,7 @@ app.use(passsportConfig.ensureAuthenticated);
 
 
 app.get('/', indexController.index);
+app.get('/videojs', indexController.videojs); // videojs loading
 app.get('/view', indexController.view);
 app.get('/view/:id', indexController.focusVideo);
 app.get('/getNote/:id', videoController.getNote);

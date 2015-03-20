@@ -86,6 +86,9 @@ var indexController = {
       console.log(result);
       res.render('focusVideo', result);
     });
+  },
+  videojs: function(req,res){
+    res.render('videojs');
   }
 };
 
