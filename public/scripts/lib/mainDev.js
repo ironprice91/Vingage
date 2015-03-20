@@ -9,7 +9,7 @@ var videoView = new VideoListView({
 	collection: videos
 });
 
-// Start refactor
+// Start refactoring
 var functionFactory = {
 	timeConvert: function(num){
 		var min = Math.floor(num/60),
