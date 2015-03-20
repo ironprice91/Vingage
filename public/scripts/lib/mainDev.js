@@ -9,6 +9,37 @@ var videoView = new VideoListView({
 	collection: videos
 });
 
+// Start refactor
+var functionFactory = {
+	timeConvert: function(num){
+		var min = Math.floor(num/60),
+		seconds = num - (min*60),
+		roundedSeconds = Math.floor((seconds)),
+		secondsArray = roundedSeconds.toString().split('');
+
+		if(secondsArray.length === 1){
+			return (wholeNumber+':0'+roundedSeconds);
+		} else {
+			return (wholeNumber+':'+roundedSeconds);
+		}
+	},
+	renderNote: function(noteData){
+		var el = $('<tr>')
+		el.attr('data-note', noteData._id);
+		el.attr('id', noteData._id);
+		el.attr('class', 'note-row');
+		el.append('<td><button class="set-time btn btn-default" data-set-time="'+noteData.time+'">'+noteData.displayTime+'</button><p>'+noteData.note+'</p></td>');
+
+		return el;
+	}
+}
+
+
+
+//
+// End Refactor Code of below
+//
+
 // New note template
 var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button class="cancel-note btn btn-danger">Cancel</button><button type="submit" class="btn btn-primary pull-right submit-note-btn">Save</button><form>';
 
@@ -17,31 +48,6 @@ var notePopover = '<button class="btn btn-success popover-btn edit-note">Edit  <
     '<button class="btn btn-danger popover-btn delete-note">Delete</button>'+
     '<button id="close-popover" data-toggle="clickover" class="btn btn-small btn-primary popover-btn" onclick="$(&quot;.note-row&quot;).popover(&quot;hide&quot;);">Close</button>';
 
-// Render Note
-var renderNote = function(noteData){
-	var el = $('<tr>')
-	el.attr('data-note', noteData._id);
-	el.attr('id', noteData._id);
-	el.attr('class', 'note-row');
-	el.append('<td><button class="set-time btn btn-default" data-set-time="'+noteData.time+'">'+noteData.displayTime+'</button><p>'+noteData.note+'</p></td>');
-
-	return el;
-};
-
-// Display time (refactor to use % modulus)
-var timeConvert = function(num){
-	var minutes = num/60;
-	var wholeNumber = Math.floor(minutes);
-	var seconds = num - (wholeNumber*60);
-	var roundedSeconds = Math.floor((seconds));
-	var secondsArray = roundedSeconds.toString().split('');
-
-	if(secondsArray.length === 1){
-		return (wholeNumber+':0'+roundedSeconds);
-	} else {
-		return (wholeNumber+':'+roundedSeconds);
-	}
-};
 
 $(function(){
 	$('#username-input').focus();
@@ -153,10 +159,10 @@ $(function(){
 			var noteValue = $(this).find('textarea').val();
 			var thisTable = $(this).closest('table');
 			var thisNoteTime = thisVideo.currentTime;
-			var timeDisplay = timeConvert(thisNoteTime);
+			var timeDisplay = functiontimeConvert(thisNoteTime);
 
 			$.post('/saveNote', {id:videoId, note:noteValue, time:thisNoteTime, displayTime:timeDisplay}, function(responseData){
-				var noteEl = renderNote(responseData);
+				var noteEl = functionFactory.renderNote(responseData);
 				thisTable.append(noteEl);
 			});
 
@@ -221,3 +227,4 @@ $(function(){
 
 
 });
+

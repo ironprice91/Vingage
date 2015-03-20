@@ -38,8 +38,6 @@ app.use(session({secret: 'secret key'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-
 app.get('/auth/login', authenticationController.login);
 app.post('/auth/login', authenticationController.processLogin);
 app.post('/auth/signup', authenticationController.processSignup);
@@ -62,7 +60,6 @@ app.post('/saveNote', videoController.addNote);
 app.post('/updateNote/:id', videoController.updateNote);
 app.post('/deleteNote', videoController.deleteNote);
 
-// test
 var port = process.env.PORT || 6503;
 var server = app.listen(port, function() {
 	console.log('Express server listening on port ' + server.address().port);
