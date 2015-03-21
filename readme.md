@@ -1,4 +1,4 @@
-### Vingage[]()
+### Vingage [![Build Status](https://travis-ci.org/ironprice91/Vingage.svg?branch=master)](https://travis-ci.org/ironprice91/Vingage)
 ___
 
 Vingage was created for students to take notes during video lectures.
