@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var favicon = require('serve-favicon');
 var passsportConfig = require('./config/passport.js');
 
+//
 // encrypt lib for password
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
