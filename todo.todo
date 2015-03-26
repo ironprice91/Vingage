@@ -1,4 +1,5 @@
 TOP:
+ ☐ Set up gulp/watchify
  ☐ Comment on what every function does/every page/every redirect
  ☐ Load videos properly with videojs (see docs: https://github.com/videojs/video.js/)
 Key:
