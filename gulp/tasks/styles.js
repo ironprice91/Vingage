@@ -2,11 +2,12 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var minifycss = require('gulp-minify-css');
 var livereload = require('gulp-livereload');
+var config = require('../config').styles;
 
 gulp.task('styles', function(){
-	gulp.src('public/stylesheets/lib/**/*.css') //files to input
-	.pipe(concat('main.css')) //concat
-	.pipe(minifycss()) //minify
-	.pipe(gulp.dest('public/stylesheets')) //write to output
+	gulp.src(config.src)
+	.pipe(concat('main.css'))
+	.pipe(minifycss())
+	.pipe(gulp.dest(config.dest))
 	.pipe(livereload({ auto: false }))
 });

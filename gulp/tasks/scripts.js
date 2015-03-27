@@ -1,12 +1,12 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-//  var config = require('../config');
+var config = require('../config').scripts;
 
 // 'scripts' is runnable
 gulp.task('scripts', function(){
-	gulp.src('public/scripts/lib/**/*.js') //files to input
+	gulp.src(config.src) //files to input
 	.pipe(concat('main.js')) //concat
 	.pipe(uglify()) //minify
-	.pipe(gulp.dest('public/scripts')); //write to output
+	.pipe(gulp.dest(config.dest)); //write to output
 });

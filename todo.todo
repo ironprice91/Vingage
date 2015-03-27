@@ -1,5 +1,4 @@
 TOP:
- ☐ create config file in gulp dir to house paths
  ☐ Set up gulp/watchify
  ☐ set up nodemon gulp, gulp lint
  ☐ Comment on what every function does/every page/every redirect
@@ -12,14 +11,14 @@ Key:
  ☐ When production link to main  js/css
  ☐ Uncomment code that you didn't implement
  ☐ Switch the popovers to left
-Backlog: 
+Backlog:
  ☐ mouseover on upload --
  ☐ Implement dropzone
  ☐ API logins -
  ☐ Using Youtube API
  ☐ Interactive chat with sockets -
- ☐ Delete user profile 
- ☐ Add ability to stream - 
+ ☐ Delete user profile
+ ☐ Add ability to stream -
  ☐ Push to heroku
  ☐ set up heroku db
  ☐ Search videos
@@ -37,6 +36,7 @@ Backlog:
  ☐ Highlight note when the time get scrubbed over < (TRY table hover when time scrub)
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ create config file in gulp dir to house paths @done (15-03-27 09:09) @project(TOP)
  ✔ Theater mode @done (14-11-11 17:10) @project(Backlog)
  ✔ Edit notes <<<<<< @done (14-11-11 14:43) @project(Backlog)
  ✔ AJAX rendering <<<<<<<<< @done (14-11-11 10:38) @project(Backlog)
