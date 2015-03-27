@@ -1,7 +1,5 @@
-var gulp = require('./gulp')([
-	'scripts'
-	// 'gulp-minify-css',
-	// 'gulp-livereload'
-]);
+var gulp = require('gulp');
+var requireDir = require('require-dir');
+requireDir('./gulp/tasks', { recurse: true });
 
-gulp.task('default', ['scripts', 'styles']);
+gulp.task('default', ['scripts']);

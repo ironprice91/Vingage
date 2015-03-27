@@ -8,6 +8,5 @@ gulp.task('scripts', function(){
 	gulp.src('public/scripts/lib/**/*.js') //files to input
 	.pipe(concat('main.js')) //concat
 	.pipe(uglify()) //minify
-	.pipe(gulp.dest('public/scripts'))
-	.pipe(notify({ message: 'Scripts task complete' })); //write to output
+	.pipe(gulp.dest('public/scripts')); //write to output
 });
