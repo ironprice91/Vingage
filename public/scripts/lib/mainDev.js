@@ -12,7 +12,6 @@ var videoView = new VideoListView({
 	collection: videos
 });
 
-
 // New note template
 var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button class="cancel-note btn btn-danger">Cancel</button><button type="submit" class="btn btn-primary pull-right submit-note-btn">Save</button><form>';
 
@@ -24,7 +23,7 @@ var notePopover = '<button class="btn btn-success popover-btn edit-note">Edit  <
 
 $(function(){
 	$('#username-input').focus();
-	
+
 	$(document).ready(function(){
 		$('.splash-logo').removeClass('hidden');
 		$('.splash-logo').fadeIn(3000);
