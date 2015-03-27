@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var minifycss = require('gulp-minify-css');
+var livereload = require('gulp-livereload');
 
 gulp.task('styles', function(){
 	gulp.src('public/stylesheets/lib/**/*.css') //files to input
