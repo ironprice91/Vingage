@@ -12,7 +12,7 @@ module.exports = {
 		}
 	},
 	renderNote: function(noteData){
-		var el = $('<tr>')
+		var el = $('<tr>');
 		el.attr('data-note', noteData._id);
 		el.attr('id', noteData._id);
 		el.attr('class', 'note-row');
