@@ -1,4 +1,5 @@
 TOP:
+ ☐ create config file in gulp dir to house paths
  ☐ Set up gulp/watchify
  ☐ set up nodemon gulp, gulp lint
  ☐ Comment on what every function does/every page/every redirect
