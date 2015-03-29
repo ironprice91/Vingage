@@ -1,7 +1,5 @@
 var gulp = require('gulp');
-var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var config = require('../config').browserify;
 
