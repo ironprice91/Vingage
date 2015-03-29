@@ -1,5 +1,4 @@
-var Helper = require('./Helper');
-
+var Helper = require('./modules/Helper');
 
 var videos = new VideoList();
 
@@ -51,7 +50,7 @@ $(function(){
 		var videoID = video.attr('id');
 
 		var noteContainer = $(this).parent();
-		var noteID = noteContainer.parent().prev().attr('id'); 
+		var noteID = noteContainer.parent().prev().attr('id');
 
 		$.post('/deleteNote', {id: noteID, videoId: videoID}, function(responseData){
 			console.log('responseData.success: ', responseData.success);
@@ -117,7 +116,7 @@ $(function(){
 
 		// render note
 		tableOfNotes.prepend(newNoteForm);
-		
+
 		// Deleting note form
 		$(document).on('click', '.cancel-note', function(e){
 			e.preventDefault();
@@ -171,7 +170,7 @@ $(function(){
 		var thisVideo = document.getElementById(videoId);
 		var setTime = $(this).attr('data-set-time');
 
-		thisVideo.currentTime = Number(setTime);	
+		thisVideo.currentTime = Number(setTime);
 	});
 
 	// Toggle theater mode

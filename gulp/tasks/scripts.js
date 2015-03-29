@@ -5,8 +5,8 @@ var config = require('../config').scripts;
 
 // 'scripts' is runnable
 gulp.task('scripts', function(){
-	gulp.src(config.src) //files to input
-	.pipe(concat('main.js')) //concat
-	.pipe(uglify()) //minify
-	.pipe(gulp.dest(config.dest)); //write to output
+	gulp.src(config.src)
+	.pipe(concat('main.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest(config.dest));
 });

@@ -1,33 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = {
-	timeConvert: function(num){
-		var min = Math.floor(num/60),
-		seconds = num - (min*60),
-		roundedSeconds = Math.floor((seconds)),
-		secondsArray = roundedSeconds.toString().split('');
-
-		if(secondsArray.length === 1){
-			return (wholeNumber+':0'+roundedSeconds);
-		} else {
-			return (wholeNumber+':'+roundedSeconds);
-		}
-	},
-	renderNote: function(noteData){
-		var el = $('<tr>')
-		el.attr('data-note', noteData._id);
-		el.attr('id', noteData._id);
-		el.attr('class', 'note-row');
-		el.append('<td><button class="set-time btn btn-default" data-set-time="'+noteData.time+'">'+noteData.displayTime+'</button><p>'+noteData.note+'</p></td>');
-
-		return el;
-	}
-};
-},{}],2:[function(require,module,exports){
-var Helper = require('./Helper');
-
-console.log(Helper);
-console.log(Helper.timeConvert);
-console.log(typeof Helper.timeConvert);
+var Helper = require('./modules/Helper');
 
 var videos = new VideoList();
 
@@ -40,14 +12,6 @@ var videoView = new VideoListView({
 	collection: videos
 });
 
-// Start refactor
-
-
-
-//
-// End Refactor Code of below
-//
-
 // New note template
 var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button class="cancel-note btn btn-danger">Cancel</button><button type="submit" class="btn btn-primary pull-right submit-note-btn">Save</button><form>';
 
@@ -59,7 +23,7 @@ var notePopover = '<button class="btn btn-success popover-btn edit-note">Edit  <
 
 $(function(){
 	$('#username-input').focus();
-	
+
 	$(document).ready(function(){
 		$('.splash-logo').removeClass('hidden');
 		$('.splash-logo').fadeIn(3000);
@@ -87,7 +51,7 @@ $(function(){
 		var videoID = video.attr('id');
 
 		var noteContainer = $(this).parent();
-		var noteID = noteContainer.parent().prev().attr('id'); 
+		var noteID = noteContainer.parent().prev().attr('id');
 
 		$.post('/deleteNote', {id: noteID, videoId: videoID}, function(responseData){
 			console.log('responseData.success: ', responseData.success);
@@ -153,7 +117,7 @@ $(function(){
 
 		// render note
 		tableOfNotes.prepend(newNoteForm);
-		
+
 		// Deleting note form
 		$(document).on('click', '.cancel-note', function(e){
 			e.preventDefault();
@@ -167,10 +131,10 @@ $(function(){
 			var noteValue = $(this).find('textarea').val();
 			var thisTable = $(this).closest('table');
 			var thisNoteTime = thisVideo.currentTime;
-			var timeDisplay = functiontimeConvert(thisNoteTime);
+			var timeDisplay = Helper.timeConvert(thisNoteTime);
 
 			$.post('/saveNote', {id:videoId, note:noteValue, time:thisNoteTime, displayTime:timeDisplay}, function(responseData){
-				var noteEl = functionFactory.renderNote(responseData);
+				var noteEl = Helper.renderNote(responseData);
 				thisTable.append(noteEl);
 			});
 
@@ -207,7 +171,7 @@ $(function(){
 		var thisVideo = document.getElementById(videoId);
 		var setTime = $(this).attr('data-set-time');
 
-		thisVideo.currentTime = Number(setTime);	
+		thisVideo.currentTime = Number(setTime);
 	});
 
 	// Toggle theater mode
@@ -237,4 +201,28 @@ $(function(){
 });
 
 
-},{"./Helper":1}]},{},[2]);
+},{"./modules/Helper":2}],2:[function(require,module,exports){
+module.exports = {
+	timeConvert: function(num){
+		var min = Math.floor(num/60),
+		seconds = num - (min*60),
+		roundedSeconds = Math.floor((seconds)),
+		secondsArray = roundedSeconds.toString().split('');
+
+		if(secondsArray.length === 1){
+			return (wholeNumber+':0'+roundedSeconds);
+		} else {
+			return (wholeNumber+':'+roundedSeconds);
+		}
+	},
+	renderNote: function(noteData){
+		var el = $('<tr>');
+		el.attr('data-note', noteData._id);
+		el.attr('id', noteData._id);
+		el.attr('class', 'note-row');
+		el.append('<td><button class="set-time btn btn-default" data-set-time="'+noteData.time+'">'+noteData.displayTime+'</button><p>'+noteData.note+'</p></td>');
+
+		return el;
+	}
+};
+},{}]},{},[1]);

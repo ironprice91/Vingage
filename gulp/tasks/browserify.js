@@ -3,20 +3,13 @@ var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
-var watchify = require('watchify');
 var browserify = require('browserify');
 
-var bundler = watchify(browserify(watchify.args));
+// var bundler = watchify(browserify(watchify.args));
 
-bundler.add('../../test.js');
-
-gulp.task('js', bundle);
-bundler.on('update', bundle);
-bundler.on('log', gutil.log);
-
-function bundle() {
-	return bundler.bundle()
-	.on('error', gutil.log.bind(gutil, 'Browserify Error'))
+gulp.task('browserify', function(){
+	return browserify('./public/scripts/lib/mainDev.js')
+	.bundle()
 	.pipe(source('bundle.js'))
-	.pipe(gul.dest('./dist'));
-}
+	.pipe(gulp.dest('./public/scripts/lib/'))
+})

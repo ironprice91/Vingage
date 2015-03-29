@@ -8,7 +8,7 @@ var VideoView = Backbone.View.extend({
 		);
 	},
 	events: {
-		'click .deleteVideo' : 'deleteVideo' 
+		'click .deleteVideo' : 'deleteVideo'
 	},
 	deleteVideo: function(){
 		console.log(this.model.attributes._id);

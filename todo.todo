@@ -1,4 +1,6 @@
 TOP:
+ ❑ Single videos aren't working because of script in index.jade the bootstrappedVideos var
+ ❑ New js file for login page
  ☐ Set up gulp/watchify
  ☐ set up nodemon gulp
  ☐ Comment on what every function does/every page/every redirect
@@ -19,8 +21,6 @@ Backlog:
  ☐ Interactive chat with sockets -
  ☐ Delete user profile
  ☐ Add ability to stream -
- ☐ Push to heroku
- ☐ set up heroku db
  ☐ Search videos
  ☐ Implement Sass (gulp sass/use libsass)
  ☐ Include VTI file for  subtitiles and searchable video --
@@ -36,6 +36,8 @@ Backlog:
  ☐ Highlight note when the time get scrubbed over < (TRY table hover when time scrub)
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Push to heroku @done (15-03-29 00:41) @project(Backlog)
+ ✔ set up heroku db @done (15-03-29 00:41) @project(Backlog)
  ✔ gulp lint @done (15-03-27 10:01) @project(TOP)
  ✔ create config file in gulp dir to house paths @done (15-03-27 09:09) @project(TOP)
  ✔ Theater mode @done (14-11-11 17:10) @project(Backlog)
