@@ -6,7 +6,7 @@
     "connect-flash": "~0.1.1",
     "cookie-parser": "~1.1.0",
     "dropzone": "~3.8.4",
-    "express": "^4",
+    "express": "^4.12.3",
     "express-session": "~1.9.1",
     "jade": "^1",
     "mongoose": "~4.0.1",
