@@ -4,12 +4,11 @@ var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
-
-// var bundler = watchify(browserify(watchify.args));
+var config = require('../config').browserify;
 
 gulp.task('browserify', function(){
-	return browserify('./public/scripts/lib/mainDev.js')
+	return browserify(config.src)
 	.bundle()
 	.pipe(source('bundle.js'))
-	.pipe(gulp.dest('./public/scripts/lib/'))
+	.pipe(gulp.dest(config.dest));
 })

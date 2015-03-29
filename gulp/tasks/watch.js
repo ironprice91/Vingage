@@ -8,4 +8,5 @@ gulp.task('watch', function(){
 	gulp.watch(config.scripts.src, ['scripts']);
 	gulp.watch(config.styles.src, ['styles']);
 	gulp.watch(config.jade.src, ['jade']);
+	gulp.watch(config.browserify.src, ['browserify']);
 });

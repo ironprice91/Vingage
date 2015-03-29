@@ -9,5 +9,9 @@ module.exports = {
 	},
 	jade: {
 		src: '**/*.jade'
+	},
+	browserify : {
+		src: './public/scripts/lib/mainDev.js',
+		dest: './public/scripts/lib/'
 	}
 };
