@@ -1,5 +1,10 @@
-### Vingage [![Build Status](https://travis-ci.org/ironprice91/Vingage.svg?branch=master)](https://travis-ci.org/ironprice91/Vingage) [![Dependency Status](https://david-dm.org/ironprice91/Vingage.svg)](https://david-dm.org/ironprice91/Vingage) [![devDependency Status](https://david-dm.org/ironprice91/Vingage/dev-status.svg)](https://david-dm.org/ironprice91/Vingage#info=devDependencies)
+### Vingage [![Build Status](https://travis-ci.org/ironprice91/Vingage.svg?branch=master)](https://travis-ci.org/ironprice91/Vingage)
 ___
+
+<!--
+dependency status:
+[![Dependency Status](https://david-dm.org/ironprice91/Vingage.svg)](https://david-dm.org/ironprice91/Vingage)
+[![devDependency Status](https://david-dm.org/ironprice91/Vingage/dev-status.svg)](https://david-dm.org/ironprice91/Vingage#info=devDependencies) -->
 
 Vingage was created for students to take notes during video lectures.
 Adding engagment and providing a better learning experience.
