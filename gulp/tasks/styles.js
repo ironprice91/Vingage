@@ -5,8 +5,8 @@ var livereload = require('gulp-livereload');
 var config = require('../config').styles;
 
 gulp.task('styles', function(){
-	gulp.src(config.src)
-	.pipe(concat('main.css'))
+	gulp.src([config.src, '!public/stylesheets/lib/video-js.min.css'])
+	.pipe(concat('main-min.css'))
 	.pipe(minifycss())
 	.pipe(gulp.dest(config.dest))
 	.pipe(livereload({ auto: false }))

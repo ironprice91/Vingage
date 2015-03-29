@@ -1,5 +1,6 @@
 TOP:
  ❑ Single videos aren't working because of script in index.jade the bootstrappedVideos var
+ ❑ When start taking note records the start of note and when you save it it get the end (need to change schemas)
  ❑ New js file for login page
  ☐ Set up gulp/watchify
  ☐ set up nodemon gulp
