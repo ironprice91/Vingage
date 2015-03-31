@@ -1,12 +1,13 @@
 var mongoose = require('mongoose');
 var User = require('./user');
-var UserId = User._id;
+var ObjectId = User._id;
 
+console.log(User);
 // AWS video Schema
 var videoSchema = mongoose.Schema({
 	title: String,
 	videoSrc: String,
-  owners: [UserId],
+  owners: [User],
 	notes: [{
 		time: Number,
 		displayTime: String,
@@ -14,4 +15,4 @@ var videoSchema = mongoose.Schema({
 	}]
 });
 
-module.exports = mongoose.model('video', videoSchema);
+module.exports =  mongoose.model('video', videoSchema);

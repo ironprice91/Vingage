@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 var Video = require('./video');
-var VideoId = Video._id;
 
 var userSchema = mongoose.Schema({
 	username: {
@@ -18,7 +17,7 @@ var userSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-  ownedVideos: [VideoId]
+  videos: [{ type: mongoose.Schema.Types.ObjectId, ref: Video}]
 });
 
 userSchema.pre('save', function(next){
