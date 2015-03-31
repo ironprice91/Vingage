@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
+var Video = require('./video');
+var VideoId = Video._id;
 
 var userSchema = mongoose.Schema({
 	username: {
@@ -15,7 +17,8 @@ var userSchema = mongoose.Schema({
 	password: {
 		type: String,
 		required: true
-	}
+	},
+  ownedVideos: [VideoId]
 });
 
 userSchema.pre('save', function(next){
@@ -46,10 +49,10 @@ userSchema.pre('save', function(next){
 
 userSchema.methods.comparePassword = function(candidatePassword, next){
 	bcrypt.compare(
-			candidatePassword, this.password, 
+			candidatePassword, this.password,
 			function(err, isMatch){
 				if(err){
-					return next(err)
+					return next(err);
 				}
 				next(null, isMatch);
 		}
