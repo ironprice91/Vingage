@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
-var Video = require('./video');
 
 var userSchema = mongoose.Schema({
 	username: {
@@ -16,8 +15,7 @@ var userSchema = mongoose.Schema({
 	password: {
 		type: String,
 		required: true
-	},
-  videos: [{ type: mongoose.Schema.Types.ObjectId, ref: Video}]
+	}
 });
 
 userSchema.pre('save', function(next){
