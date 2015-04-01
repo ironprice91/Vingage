@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "aws-sdk": "^2.0.22",
-    "bcrypt": "~0.8.0",
+    "bcrypt": "^0.8.2",
     "body-parser": "^1",
     "browserify": "^9.0.3",
     "connect-flash": "~0.1.1",
