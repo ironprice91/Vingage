@@ -40,7 +40,7 @@ app.use(session({
 	saveUninitialized: true
 }));
 app.use(passport.initialize());
-
+//
 app.use(passport.session());
 app.get('/auth/login', authenticationController.login);
 app.post('/auth/login', authenticationController.processLogin);
