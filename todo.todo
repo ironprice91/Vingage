@@ -2,7 +2,10 @@ TOP:
  ❑ Single videos aren't working because of script in index.jade the bootstrappedVideos var
  ❑ When start taking note records the start of note and when you save it it get the end (need to change schemas)
  ❑ New js file for login page
+ ☐ Set up gulp/watchify
+ ☐ set up nodemon gulp
  ☐ Comment on what every function does/every page/every redirect
+ ☐ Load videos properly with videojs (see docs: https://github.com/videojs/video.js/)
 Key:
 < priority
 - not priority
@@ -34,9 +37,6 @@ Backlog:
  ☐ Highlight note when the time get scrubbed over < (TRY table hover when time scrub)
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
- ✘ Load videos properly with videojs (see docs: https://github.com/videojs/video.js/) @cancelled (15-03-29 12:01) @project(TOP)
- ✘ Set up gulp/watchify @cancelled (15-03-29 12:01) @project(TOP)
- ✘ set up nodemon gulp @cancelled (15-03-29 12:01) @project(TOP)
  ✔ Push to heroku @done (15-03-29 00:41) @project(Backlog)
  ✔ set up heroku db @done (15-03-29 00:41) @project(Backlog)
  ✔ gulp lint @done (15-03-27 10:01) @project(TOP)
