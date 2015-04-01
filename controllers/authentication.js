@@ -66,7 +66,7 @@ var authenticationController = {
         req.flash('error', 'Error logging in. Please try again.');
         return res.redirect('/auth/login');
       }
-      
+
       // If we make it this far, the user has correctly authenticated with passport
       // so now, we'll just log the user in to the system.
       performLogin(req, res, next, user);

@@ -24,22 +24,22 @@ var videoController = {
 	},
 	// Add note to specific id
 	addNote : function(req,res){
-		var videoId = req.body.id;		
+		var videoId = req.body.id;
 		var videoData = req.body
 		var id = realId(videoId);
 
 		var oneNote = {
 			time: videoData.time,
 			displayTime: videoData.displayTime,
-			note: videoData.note 
+			note: videoData.note
 		};
 
 		Video.findOneAndUpdate({_id: id}, {$push: {notes:oneNote}}, {safe: true, upsert:true}, function(err, result){
 				if(err){
-					console.log(err);	
+					console.log(err);
 				} else {
-					res.send(result.notes[result.notes.length-1]);	
-				}	
+					res.send(result.notes[result.notes.length-1]);
+				}
 		});
 	},
 	deleteNote: function(req,res){

@@ -14,5 +14,5 @@ Video.find({}, function(err, results){
 			}]
 		});
 	videoGuy.save();
-	}	
+	}
 });
