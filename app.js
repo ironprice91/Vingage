@@ -7,7 +7,7 @@ var passsportConfig = require('./config/passport.js');
 
 // encrypt lib for password
 var session = require('express-session');
-// var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser');
 var flash = require('connect-flash');
 var passport = require('passport');
 
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 app.use(bodyParser.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 app.use(flash());
 
 // passport stuff
