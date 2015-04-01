@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 
-console.log(User);
 // AWS video Schema
 var videoSchema = mongoose.Schema({
 	title: String,
