@@ -1,4 +1,7 @@
 var Helper = require('./modules/Helper');
+var async = require('async');
+
+console.log(async);
 
 var videos = new VideoList();
 
@@ -12,12 +15,17 @@ var videoView = new VideoListView({
 });
 
 // New note template
-var newNoteForm = '<form id="submit-note"><textarea name="note" class="new-note" placeholder="Note..."></textarea><button class="cancel-note btn btn-danger">Cancel</button><button type="submit" class="btn btn-primary pull-right submit-note-btn">Save</button><form>';
+var newNoteForm = '' +
+	'<form id="submit-note">\
+		<textarea name="note" class="new-note" placeholder="Note..."></textarea>\
+		<button class="cancel-note btn btn-danger">Cancel</button>\
+		<button type="submit" class="btn btn-primary pull-right submit-note-btn">Save</button>\
+	<form>';
 
 // Popover for editing notes
-var notePopover = '<button class="btn btn-success popover-btn edit-note">Edit  </button>'+
-    '<button class="btn btn-danger popover-btn delete-note">Delete</button>'+
-    '<button id="close-popover" data-toggle="clickover" class="btn btn-small btn-primary popover-btn" onclick="$(&quot;.note-row&quot;).popover(&quot;hide&quot;);">Close</button>';
+var notePopover = '' + '<button class="btn btn-success popover-btn edit-note">Edit  </button>\
+    <button class="btn btn-danger popover-btn delete-note">Delete</button>\
+    <button id="close-popover" data-toggle="clickover" class="btn btn-small btn-primary popover-btn" onclick="$(&quot;.note-row&quot;).popover(&quot;hide&quot;);">Close</button>';
 
 
 $(function(){
