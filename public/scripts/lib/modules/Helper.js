@@ -6,9 +6,9 @@ module.exports = {
 		secondsArray = roundedSeconds.toString().split('');
 
 		if(secondsArray.length === 1){
-			return (wholeNumber+':0'+roundedSeconds);
+			return (min+':0'+roundedSeconds);
 		} else {
-			return (wholeNumber+':'+roundedSeconds);
+			return (min+':'+roundedSeconds);
 		}
 	},
 	renderNote: function(noteData){
