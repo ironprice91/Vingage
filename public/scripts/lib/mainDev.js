@@ -1,7 +1,6 @@
 var Helper = require('./modules/Helper');
 var async = require('async');
-
-console.log(async);
+var _ = require('underscore');
 
 var videos = new VideoList();
 
