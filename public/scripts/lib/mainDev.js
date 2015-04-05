@@ -78,7 +78,11 @@ $(function(){
 		var noteContainer = $(this).parent();
 		var noteID = noteContainer.parent().prev().attr('id');
 
-		var editTextarea = '<form id="edit-note"><textarea id="edit-note-form" name="editNoteForm" cols="37" rows="8"></textarea><input type="submit" class="btn btn-default"></form>';
+		var editTextarea = '' +
+		'<form id="edit-note">\
+			<textarea id="edit-note-form" name="editNoteForm" cols="37" rows="8"></textarea>\
+			<input type="submit" class="btn btn-default">\
+		</form>';
 
 		$(noteContainer).append(editTextarea);
 		var requestNote = '/getNote/' + videoId +'-'+noteID;
