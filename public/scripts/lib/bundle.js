@@ -5,14 +5,6 @@ var _ = require('underscore');
 
 var videos = new VideoList();
 
-videos.reset(bootstrappedVideos);
-
-var videoView = new VideoListView({
-	attributes: {
-		title: 'Video Quick View'
-	},
-	collection: videos
-});
 
 // New note template
 var newNoteForm = '' +
@@ -36,6 +28,14 @@ $(function(){
 		$('.splash-logo').fadeIn(3000);
 	});
 
+	videos.reset(bootstrappedVideos);
+
+	var videoView = new VideoListView({
+		attributes: {
+			title: 'Video Quick View'
+		},
+		collection: videos
+	});
 	// render all videos and append
 	videoView.render();
 	$('body').append(videoView.el);
@@ -210,7 +210,6 @@ $(function(){
 
 
 });
-
 
 },{"./modules/Helper":5,"async":2,"underscore":4}],2:[function(require,module,exports){
 (function (process){
