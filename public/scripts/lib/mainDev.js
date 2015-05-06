@@ -27,7 +27,27 @@ var notePopover = '' + '<button class="btn btn-success popover-btn edit-note">Ed
     <button id="close-popover" data-toggle="clickover" class="btn btn-small btn-primary popover-btn" onclick="$(&quot;.note-row&quot;).popover(&quot;hide&quot;);">Close</button>';
 
 
-$(function(){
+$(document).ready(function(){
+
+	var App = function(){};
+
+	App.prototype.init = function(){
+			var self = this;
+			var videoContainers = $(".container .video-note-container");
+
+			videoContainers.each(function(){
+				self.set($(this));
+			});
+	};
+
+	App.prototype.set = function(holder){
+		console.log(holder);
+	};
+
+	var APP = new App();
+	APP.init();
+
+
 	$('#username-input').focus();
 
 	$(document).ready(function(){
