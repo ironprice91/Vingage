@@ -50,10 +50,15 @@ $(function(){
 		var video = parent.find("video");
 		var videoId = video.attr("id");
 		var theaterBtn = parent.find(".theater-mode");
+		var deleteVidBtn = parent.find(".deleteVideo");
 		var utilityBar = parent.find(".video-control-center");
 
 		theaterBtn.on("click", function(){
 			self.enableTheaterMode(video);
+		});
+
+		deleteVidBtn.on("click", function(){
+			self.deleteVideo(parent, videoId);
 		});
 
 		utilityBar.each(function(){
@@ -64,6 +69,20 @@ $(function(){
 
 	App.prototype.enableTheaterMode = function(el){
 		console.log(el);
+	};
+
+	// I THINK THE VIDEO PLAYERS ARE GETTING RESET BECAUSE OF A CLASS CHANGE OR CSS CHANGE
+	App.prototype.deleteVideo = function(parent, vidId){
+		var deleteVideo = confirm('Are you sure you want to delete this video?');
+
+		if(deleteVideo === true){
+			$.post('/deleteVideo', {id: vidId}, function(responseData){
+
+					if(responseData.success === true){
+						parent.remove();
+					}
+			});
+		}
 	};
 
 	// all utily command
@@ -82,19 +101,19 @@ $(function(){
 				html: true
 			});
 		});
-		console.log(popoverDelBtn);
-		if(popoverDelBtn.length > 0){
-			popoverDelBtn.on("click", function(){
-				console.log("Test");
-				$.post("/deleteNote", { id: noteId, videoId: vidId }, function(res){
-					console.log("responseData", res.success);
-					if(res.success === true){
-						$(".popover").remove();
-						note.remove();
-					}
-				});
+
+
+		$(".delete-note").on("click", function(){
+			console.log("test");
+			$.post("/deleteNote", { id: noteId, videoId: vidId }, function(res){
+				console.log("responseData", res.success);
+				if(res.success === true){
+					$(".popover").remove();
+					note.remove();
+				}
 			});
-		}
+
+		});
 
 	};
 
@@ -216,21 +235,7 @@ $(function(){
 	});
 
 
-	// deleting a single video
-	$(document).on('click', '.deleteVideo', function(){
-		var videoContainer = $(this).closest('li');
-		var videoId = videoContainer.attr('data-video-container');
-		// var deleteVideo = confirm('Are you sure you want to delete this video?');
 
-		// if(deleteVideo === true){
-			$.post('/deleteVideo', {id: videoId}, function(responseData){
-				console.log('responseData: ', responseData);
-					if(responseData.success === true){
-						videoContainer.remove();
-					}
-			});
-		// }
-	});
 
 	// Set time on video
 	$(document).on('click','.set-time', function(e){
