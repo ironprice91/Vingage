@@ -4,7 +4,7 @@ var _ = require('underscore');
 
 var videos = new VideoList();
 
-videos.reset(bootstrappedVideos);
+(location.href === "http://localhost:6503/" || location.href === "https://vingage.herokuapp.com/" ) ? videos.reset(bootstrappedVideos) : null;
 
 var videoView = new VideoListView({
 	attributes: {
@@ -25,6 +25,12 @@ var newNoteForm = '' +
 var notePopover = '' + '<button class="btn btn-success popover-btn edit-note">Edit  </button>\
     <button class="btn btn-danger popover-btn delete-note">Delete</button>\
     <button id="close-popover" data-toggle="clickover" class="btn btn-small btn-primary popover-btn" onclick="$(&quot;.note-row&quot;).popover(&quot;hide&quot;);">Close</button>';
+
+var editTextarea = '' +
+	'<form id="edit-note">\
+		<textarea id="edit-note-form" name="editNoteForm" cols="37" rows="8"></textarea>\
+		<input type="submit" class="btn btn-default">\
+	</form>';
 
 
 $(function(){
@@ -62,7 +68,7 @@ $(function(){
 		});
 
 		utilityBar.each(function(){
-			self.setUtility($(this), videoId);
+			self.setUtility(parent, $(this), video, videoId);
 		});
 
 	};
@@ -86,7 +92,7 @@ $(function(){
 	};
 
 	// all utily command
-	App.prototype.setUtility = function(parent, vidId){
+	App.prototype.setUtility = function(parent, video,vidId){
 		var commandContainer = parent.find(".list-notes");
 		var note = commandContainer.find(".note-row");
 		var noteId = note.attr("id");
@@ -115,6 +121,17 @@ $(function(){
 
 		});
 
+		// pass video time to attr
+		$(".set-time").on("click", function(){
+			var setTime = $(this).attr("data-set-time");
+			video.currentTime = Number(setTime);
+		});
+
+		// $(".edit-note").on("click", function(e){
+		// 	e.preventDefault();
+
+		// });
+
 	};
 
 	var APP = new App();
@@ -129,7 +146,7 @@ $(function(){
 	});
 
 
-	// Delete notee
+	// Delete note
 	// $(document).on('click', '.delete-note', function(){
 	// 	var videoContainer = $(this).closest('li');
 	// 	var video = videoContainer.find('video');
@@ -146,6 +163,10 @@ $(function(){
 	// 		}
 	// 	});
 	// });
+	$(document).on("click", '.edit-note', function(e){
+		e.preventDefault();
+		console.log($(this));
+	});
 
 	// Toggle Edit note
 	$(document).on('click', '.edit-note', function(e){
@@ -162,6 +183,7 @@ $(function(){
 			<textarea id="edit-note-form" name="editNoteForm" cols="37" rows="8"></textarea>\
 			<input type="submit" class="btn btn-default">\
 		</form>';
+		console.log(noteContainer);
 
 		$(noteContainer).append(editTextarea);
 		var requestNote = '/getNote/' + videoId +'-'+noteID;
@@ -237,19 +259,6 @@ $(function(){
 
 
 
-	// Set time on video
-	$(document).on('click','.set-time', function(e){
-		e.stopPropagation();
-		var videoContainer = $(this).closest('li');
-		var video = videoContainer.find('video');
-		var videoId = video.attr('id');
-		var thisVideo = document.getElementById(videoId);
-		var setTime = $(this).attr('data-set-time');
-
-		thisVideo.currentTime = Number(setTime);
-		console.log(this);
-		console.log(setTime);
-	});
 
 	// Toggle theater mode
 	// $(document).on('click', '.theater-mode', function(){
