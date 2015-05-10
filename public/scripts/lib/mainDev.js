@@ -92,33 +92,33 @@ $(function(){
 	};
 
 	// all utily command
-	App.prototype.setUtility = function(parent, video,vidId){
+	App.prototype.setUtility = function(parent, self, video,vidId){
 		var commandContainer = parent.find(".list-notes");
 		var note = commandContainer.find(".note-row");
 		var noteId = note.attr("id");
 		var popoverDelBtn = commandContainer.find(".delete-note");
 
-		note.on("click", function(event){
-			event.preventDefault();
+		note.on("click", function(){
+
 			$(this).popover({
 				animation: true,
 				content: notePopover,
-				placement: 'left',
+				placement: 'bottom',
 				html: true
 			});
-		});
 
+			$(document).on("click", ".delete-note", function(){
+				var popoverEl = $(".popover");
 
-		$(".delete-note").on("click", function(){
-			console.log("test");
-			$.post("/deleteNote", { id: noteId, videoId: vidId }, function(res){
-				console.log("responseData", res.success);
-				if(res.success === true){
-					$(".popover").remove();
-					note.remove();
-				}
+				$.post("/deleteNote", { id: noteId, videoId: vidId }, function(res){
+					console.log(res);
+					if(res.success === true){
+						popoverEl.prev().remove();
+						popoverEl.remove();
+					}
+				});
+
 			});
-
 		});
 
 		// pass video time to attr
@@ -146,23 +146,6 @@ $(function(){
 	});
 
 
-	// Delete note
-	// $(document).on('click', '.delete-note', function(){
-	// 	var videoContainer = $(this).closest('li');
-	// 	var video = videoContainer.find('video');
-	// 	var videoID = video.attr('id');
-
-	// 	var noteContainer = $(this).parent();
-	// 	var noteID = noteContainer.parent().prev().attr('id');
-
-	// 	$.post('/deleteNote', {id: noteID, videoId: videoID}, function(responseData){
-	// 		console.log('responseData.success: ', responseData.success);
-	// 		if(responseData.success === true){
-	// 			$('#'+noteID).remove();
-	// 			$('.popover').remove();
-	// 		}
-	// 	});
-	// });
 	$(document).on("click", '.edit-note', function(e){
 		e.preventDefault();
 		console.log($(this));
