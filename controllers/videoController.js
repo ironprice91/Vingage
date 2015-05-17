@@ -19,7 +19,7 @@ var videoController = {
 	addNote : function(req,res){
 		var videoId = req.body.id;
 		var videoData = req.body
-		var id = Helper.realId(videoId);
+		var id = Helper.idFunc(videoId, false);
 
 		var oneNote = {
 			time: videoData.time,
@@ -37,9 +37,9 @@ var videoController = {
 	},
 	deleteNote: function(req,res){
 		var noteID = req.body.id;
-		var id = Helper.realId(noteID);
+		var id = Helper.idFunc(noteID, false);
 		var video = req.body.videoId;
-		var realVideoID = Helper.realId(video);
+		var realVideoID = Helper.idFunc(video, false);
 		console.log('realVideoID', realVideoID);
 		Video.update({_id: realVideoID}, {$pull: {"notes" : {_id:id}}}, function(err, result){
 			console.log(realVideoID);
@@ -53,19 +53,21 @@ var videoController = {
 	},
 	getNote: function(req,res){
 		var id = req.params.id;
-		var videoId = Helper.idSplitter(id)[0];
-		var noteId = Helper.idSplitter(id)[1];
+		var videoId = Helper.idFunc(id, true).shift();
+		var noteId = Helper.idFunc(id, true).pop();
+		console.log('michael', noteId);
 		Video.find({_id:videoId}, function(err, doc){
 			var note = doc[0].notes.id(noteId);
-			console.log(note);
+			console.log('note', note);
 			res.send(note.note);
 		});
 	},
 	updateNote: function(req,res){
 		var noteData = req.params.id;
 		var newNote = req.body.note;
-		var videoId = Helper.idSplitter(noteData)[0];
-		var noteId = Helper.idSplitter(noteData)[1];
+		var videoId = Helper.idFunc(noteData, true).shift();
+		var noteId = Helper.idFunc(noteData, true).pop();
+		console.log(noteId);
 		console.log('videoId', videoId);
 		console.log('edited note value', noteData);
 		Video.update({_id:videoId, "notes._id":noteId}, {$set: {"notes.$.note":newNote}}, function(err, result,  status){
