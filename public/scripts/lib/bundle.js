@@ -34,20 +34,8 @@ var editTextarea = '' +
 	</form>';
 
 
-<<<<<<< HEAD
-	videos.reset(bootstrappedVideos);
-
-	var videoView = new VideoListView({
-		attributes: {
-			title: 'Video Quick View'
-		},
-		collection: videos
-	});
-	// render all videos and append
-=======
 $(function(){
 	// render all videos and append to body
->>>>>>> dev
 	videoView.render();
 	$('body').append(videoView.el);
 
