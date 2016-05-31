@@ -3,16 +3,26 @@ var Helper = require('./modules/Helper');
 var async = require('async');
 var _ = require('underscore');
 
-var videos = new VideoList();
+var videos = new VideoList(),
+	videoView;
 
-(location.href === "http://localhost:6503/" || location.href === "https://vingage.herokuapp.com/" ) ? videos.reset(bootstrappedVideos) : null;
+(/(localhost)/.test(location.href) || /vingage/.test(location.href) ) ? videos.reset(bootstrappedVideos) : null;
 
-var videoView = new VideoListView({
-	attributes: {
-		title: 'Video Quick View'
-	},
-	collection: videos
-});
+if ( /(\/sandbox)/.test(window.location.href) ) {
+	videoView = new VideoListView({
+		attributes: {
+			title: 'Video Quick View'
+		},
+		collection: videos
+	});
+} else  {
+	videoView = new VideoListView({
+		attributes: {
+			title: 'Video Quick View'
+		},
+		collection: videos
+	});
+}
 
 // New note template
 var newNoteForm = '' +

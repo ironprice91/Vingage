@@ -1,26 +1,34 @@
 // We need the amazon sdk module
-var aws = require('aws-sdk');
-var fs = require('fs');
-var Video = require('../models/video.js');
+var aws = require('aws-sdk'),
+  fs = require('fs'),
+  Video = require('../models/video.js');
 
-var KEY, SECRET;
+var BUCKET = 'refactoru',
+    KEY,
+    SECRET;
+
+/*
+  IMPORTANT: PLEASE CREATE A NEW FILE CALLED IN THE ROOT DIRECTORY NAMED
+  "private.js"
+  THIS FILE WILL BE USED TO HOLD PRIVATE KEYS SUCH AS THE AWS KEY AND SECRET NEEDED BELOW. ALSO DON'T FORGET TO EXPORT THE OBJECT IN THIS FILE
+
+ */
+
 if(process.env.AWS_KEY){
-  // if the process has AWS_KEY set, we'll use those values
   KEY = process.env.AWS_KEY;
   SECRET = process.env.AWS_SECRET;
 } else {
-  // if the process doesn't have stuff set, we'll load in our config file
   var privateSettings = require('../private.js');
   KEY = privateSettings.aws.key;
   SECRET = privateSettings.aws.secret;
 }
 
-var BUCKET = 'refactoru';
 
 aws.config.update({
   accessKeyId: KEY,
   secretAccessKey: SECRET
 });
+
 var s3 = new aws.S3();
 
 var indexController = {
@@ -93,7 +101,13 @@ var indexController = {
   },
 
   sandbox: function(req, res) {
-    res.render("sandbox");
+    Video.find({}, function (err, videos) {
+      res.render('sandbox', {
+        bucket: BUCKET,
+        user: req.user,
+        videos: videos
+      });
+    });
   }
 
 };

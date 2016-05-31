@@ -1,6 +1,6 @@
 // client side view for all videos
 var VideoListView = Backbone.View.extend({
-	template: Handlebars.compile( $('#video-list').html()),
+	template: (/(\/sandbox)/.test(window.location.href)) ? Handlebars.compile( $('#video-list').html()) : Handlebars.compile( $('#video-list').html()),
 	initialize: function(){
 		this.setElement(
 			this.template(

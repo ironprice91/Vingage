@@ -1,34 +1,37 @@
-extends layout
+doctype html
+html(lang='en')
+	head
+		meta(charset="utf-8")
+		title Vingage Demo
+		link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css")
+		link(rel="stylesheet", href="//vjs.zencdn.net/4.9/video-js.css")
+		link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css")
+		link(href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css')
+		link(rel="stylesheet", href="/stylesheets/main-min.css")
 
-block content
-	h1 Video Quick View
+	body
+		nav.navbar.navbar-inverse.main-nav
+			div.container
+				ul.nav.navbar-nav
+					a.navbar-brand.nav-logo VINGAGE
 
-	//- Upload template
-	.modal.fade(id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
-		.modal-dialog.upload-modal
-			.modal-content
-				.modal-header
-					h3.modal-title Video Upload
-				.modal-body.upload-video
-					form.custom-drop(method="post", action="/newVideo", enctype="multipart/form-data" name="image")
-						h4 Title:
-							input(type="text" name="videoTitle")
-						h4 Video:
-							input(type="file", name="video")
-						hr
-						input(type="submit" class="btn btn-default pull-right")
+		section.container
+			h1 Vingage Sandbox
+			//- Handlebars template
 
-	//- Theater mode template
-	//- .modal.fade(id="theater-mode" tabindex="-1" role="dialog" aria-labelledby="theaterMode" aria-hidden="true")
-	//- 	.modal-dialog.theater-mode
-	//- 		.modal-content
-	//- 			li.video-container.theater-container(data-video-container="#{_id}")
-	//- 					video.video-js.vjs-default-skin.uploaded-video.vjs-big-play-centered.video-modal(controls width="1400" height="600" id="" data-video="" data-setup='{}' src="")
-	//- 						source.video-theater(src="" type="video/mp4")
-	//- 						source.video-theater(src="" type="video/webm")
-						//- section
-							button.col-md-12.toggle-new-note ADD NOTE
-							textarea(cols="30" rows="5")
+			script(type="text/javascript").
+				var bootstrappedVideos = !{JSON.stringify(videos)};
 
-	script.
-		var bootstrappedVideos = !{JSON.stringify(videos)};
+			include partials/video-tpl
+			include partials/video-list-tpl
+
+	//- external scripts
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+	script(src="//vjs.zencdn.net/4.9/video.js")
+	script(src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js")
+	script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js")
+	script(src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js")
+	script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js")
+
+	//- backbone scripts
+	script(src="/scripts/main-min.js")
