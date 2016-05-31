@@ -1,22 +1,22 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var fs = require('fs'); //
-var mongoose = require('mongoose');
-var favicon = require('serve-favicon');
-var passsportConfig = require('./config/passport.js');
+var express = require('express'),
+	bodyParser = require('body-parser'),
+	fs = require('fs'),
+	mongoose = require('mongoose'),
+	favicon = require('serve-favicon'),
+	passsportConfig = require('./config/passport.js');
 
 // encrypt lib for password
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
-var flash = require('connect-flash');
-var passport = require('passport');
+var session = require('express-session'),
+	cookieParser = require('cookie-parser'),
+	flash = require('connect-flash'),
+	passport = require('passport');
 
 // This allows express to parse incoming files from forms
 var multer = require('multer');
 
-var authenticationController = require('./controllers/authentication.js');
-var indexController = require('./controllers/index.js');
-var videoController = require('./controllers/videoController.js');
+var authenticationController = require('./controllers/authentication.js'),
+	indexController = require('./controllers/index.js'),
+	videoController = require('./controllers/videoController.js');
 
 // Connect to our database called: videoApp
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/vidup');
@@ -40,8 +40,8 @@ app.use(session({
 	saveUninitialized: true
 }));
 app.use(passport.initialize());
-//
-app.use(passport.session());
+
+// app.use(passport.session());
 app.get('/auth/login', authenticationController.login);
 app.post('/auth/login', authenticationController.processLogin);
 app.post('/auth/signup', authenticationController.processSignup);
@@ -49,10 +49,11 @@ app.get('/auth/logout', authenticationController.logout);
 
 
 // ensure auth
-app.use(passsportConfig.ensureAuthenticated);
+// app.use(passsportConfig.ensureAuthenticated);
 
 
 app.get('/', indexController.index);
+app.get('/sandbox', indexController.sandbox);
 app.get('/videojs', indexController.videojs); // videojs loading
 app.get('/view', indexController.view);
 app.get('/view/:id', indexController.focusVideo);

@@ -66,7 +66,7 @@ var indexController = {
       });
     });
 
-    // Database for holding the AWS url to file 
+    // Database for holding the AWS url to file
     // Might have to do /public in your hard string url
       console.log('HEY MICHAEL: ', req.body.videoTitle);
       var newVideo = new Video({
@@ -87,9 +87,15 @@ var indexController = {
       res.render('focusVideo', result);
     });
   },
+
   videojs: function(req,res){
     res.render('videojs');
+  },
+
+  sandbox: function(req, res) {
+    res.render("sandbox");
   }
+
 };
 
 module.exports = indexController;

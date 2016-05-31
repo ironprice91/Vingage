@@ -1,0 +1,34 @@
+extends layout
+
+block content
+	h1 Video Quick View
+
+	//- Upload template
+	.modal.fade(id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+		.modal-dialog.upload-modal
+			.modal-content
+				.modal-header
+					h3.modal-title Video Upload
+				.modal-body.upload-video
+					form.custom-drop(method="post", action="/newVideo", enctype="multipart/form-data" name="image")
+						h4 Title:
+							input(type="text" name="videoTitle")
+						h4 Video:
+							input(type="file", name="video")
+						hr
+						input(type="submit" class="btn btn-default pull-right")
+
+	//- Theater mode template
+	//- .modal.fade(id="theater-mode" tabindex="-1" role="dialog" aria-labelledby="theaterMode" aria-hidden="true")
+	//- 	.modal-dialog.theater-mode
+	//- 		.modal-content
+	//- 			li.video-container.theater-container(data-video-container="#{_id}")
+	//- 					video.video-js.vjs-default-skin.uploaded-video.vjs-big-play-centered.video-modal(controls width="1400" height="600" id="" data-video="" data-setup='{}' src="")
+	//- 						source.video-theater(src="" type="video/mp4")
+	//- 						source.video-theater(src="" type="video/webm")
+						//- section
+							button.col-md-12.toggle-new-note ADD NOTE
+							textarea(cols="30" rows="5")
+
+	script.
+		var bootstrappedVideos = !{JSON.stringify(videos)};
